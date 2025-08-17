@@ -10,7 +10,7 @@ export default defineConfig({
       PUBLIC_APP_URL: envField.string({ 
         context: "client", 
         access: "public", 
-        default: "https://v2.tatertalk.com" 
+        default: "https://v2.tatertalk.app" 
       }),
       PUBLIC_YOUTUBE_VIDEO_URL: envField.string({ 
         context: "client", 
