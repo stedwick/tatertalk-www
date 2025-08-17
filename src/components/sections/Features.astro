@@ -1,0 +1,219 @@
+---
+import FeatureCard from "../ui/FeatureCard.astro";
+
+const features = [
+  {
+    title: "Real-Time Transcription",
+    description:
+      "Instant speech-to-text as you speak. Watch your words appear on screen with incredible accuracy and speed.",
+    icon: "🎤",
+    gradient: "bg-gradient-to-br from-pink-500 to-violet-600",
+    delay: "0.1s",
+  },
+  {
+    title: "Cross-Platform",
+    description:
+      "Works seamlessly on desktop, tablet, and mobile devices. No app downloads or installations required.",
+    icon: "💻",
+    gradient: "bg-gradient-to-br from-cyan-500 to-blue-600",
+    delay: "0.2s",
+  },
+  {
+    title: "No Installation",
+    description:
+      "Pure web-based solution. Just open your browser and start talking. It's that simple.",
+    icon: "🌐",
+    gradient: "bg-gradient-to-br from-emerald-500 to-teal-600",
+    delay: "0.3s",
+  },
+  {
+    title: "Voice Commands",
+    description:
+      "Control your computer with voice commands. Navigate, edit, and execute actions hands-free.",
+    icon: "🎯",
+    gradient: "bg-gradient-to-br from-orange-500 to-red-600",
+    delay: "0.4s",
+  },
+];
+---
+
+<section id="features" class="py-24 relative">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div
+      class="absolute top-0 left-1/4 w-96 h-96 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl"
+    >
+    </div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center space-y-6 mb-20">
+      <div
+        class="inline-flex items-center space-x-2 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-full px-6 py-3"
+      >
+        <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
+        <span class="text-slate-300 font-medium">Features</span>
+      </div>
+
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
+        Build Skills That <span class="gradient-text">Always Matter</span>
+      </h2>
+
+      <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+        Interactive speech-to-text technology that lets you talk to your
+        computer. Master the tools every developer should know—no matter what
+        tech stack or AI tools you use.
+      </p>
+    </div>
+
+    <!-- Feature Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {
+        features.map((feature) => (
+          <FeatureCard
+            title={feature.title}
+            description={feature.description}
+            icon={feature.icon}
+            gradient={feature.gradient}
+            delay={feature.delay}
+          />
+        ))
+      }
+    </div>
+
+    <!-- Additional Features List -->
+    <div class="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Left Column -->
+      <div class="space-y-8">
+        <h3 class="text-3xl font-bold text-white mb-8">Perfect For</h3>
+        <div class="space-y-6">
+          <div class="flex items-start space-x-4">
+            <div
+              class="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1"
+            >
+              <svg
+                class="w-4 h-4 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-white">Accessibility</h4>
+              <p class="text-slate-300">
+                Perfect for users with mobility challenges or repetitive strain
+                injuries.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div
+              class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1"
+            >
+              <svg
+                class="w-4 h-4 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-white">Productivity</h4>
+              <p class="text-slate-300">
+                Dictate documents, emails, and code faster than you can type.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div
+              class="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1"
+            >
+              <svg
+                class="w-4 h-4 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-white">Multitasking</h4>
+              <p class="text-slate-300">
+                Keep your hands free for other tasks while dictating content.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="space-y-8">
+        <h3 class="text-3xl font-bold text-white mb-8">Use Cases</h3>
+        <div class="space-y-6">
+          <div class="flex items-start space-x-4">
+            <div
+              class="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1"
+            >
+              <span class="text-white text-sm">📝</span>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-white">Content Creation</h4>
+              <p class="text-slate-300">
+                Write blog posts, articles, and documentation by speaking
+                naturally.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div
+              class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1"
+            >
+              <span class="text-white text-sm">💼</span>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-white">
+                Business Communication
+              </h4>
+              <p class="text-slate-300">
+                Compose emails, reports, and presentations with voice commands.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <div
+              class="w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1"
+            >
+              <span class="text-white text-sm">⚙️</span>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold text-white">Development</h4>
+              <p class="text-slate-300">
+                Dictate code comments, documentation, and commit messages.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
