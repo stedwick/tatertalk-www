@@ -103,6 +103,47 @@ html {
   }
 }
 
+/* Slow pulse animations for hero microphone */
+.slow-pulse-glow {
+  animation: slowPulseGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes slowPulseGlow {
+  from {
+    box-shadow: 0 0 20px rgba(29, 211, 176, 0.3);
+  }
+  to {
+    box-shadow: 0 0 40px rgba(29, 211, 176, 0.6),
+      0 0 60px rgba(29, 211, 176, 0.3);
+  }
+}
+
+.slow-pulse-ring {
+  animation: slowPulseRing 4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes slowPulseRing {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.slow-pulse {
+  animation: slowPulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes slowPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
 /* Float animation */
 @keyframes float {
   0%,
@@ -147,4 +188,19 @@ html {
 
 .animate-spin-slow {
   animation: spin-slow 20s linear infinite;
+}
+
+/* Subtle bounce animation for CallToAction microphone */
+.subtle-bounce {
+  animation: subtleBounce 2s ease-in-out infinite;
+}
+
+@keyframes subtleBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }

@@ -1,5 +1,6 @@
 ---
-
+import { Image } from "astro:assets";
+import logo from "../../assets/logo.png";
 ---
 
 <section id="demo" class="py-24 relative overflow-hidden">
@@ -108,9 +109,16 @@
             <!-- Microphone Button -->
             <div class="flex justify-center">
               <button
-                class="w-20 h-20 bg-gradient-to-br from-red-500 to-pink-600 rounded-full flex items-center justify-center pulse-glow hover:scale-110 transition-transform duration-300"
+                class="relative w-20 h-20 bg-gradient-to-br from-red-500 to-pink-600 rounded-full flex items-center justify-center pulse-glow hover:scale-110 transition-transform duration-300 p-3"
               >
-                <span class="text-3xl">🎙️</span>
+                <Image
+                  src={logo}
+                  alt="Tater Talk Microphone"
+                  width={48}
+                  height={48}
+                  densities={[1, 2]}
+                  class="w-full h-full object-contain drop-shadow-lg filter contrast-150 brightness-110"
+                />
               </button>
             </div>
 
@@ -137,7 +145,7 @@
                     speech-to-text capabilities. As you can see, the words
                     appear instantly as I speak...
                   </span>
-                  <span class="animate-pulse text-cyan-400">|</span>
+                  <span class="text-cursor">|</span>
                 </div>
               </div>
             </div>
@@ -234,5 +242,26 @@
 
   .animate-spin-slow {
     animation: spin-slow 20s linear infinite;
+  }
+
+  .text-cursor {
+    display: inline;
+    color: #1dd3b0;
+    font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+    font-weight: normal;
+    vertical-align: baseline;
+    line-height: 1;
+    animation: blink 1.5s infinite;
+  }
+
+  @keyframes blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    51%,
+    100% {
+      opacity: 0;
+    }
   }
 </style>

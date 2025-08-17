@@ -9,17 +9,17 @@ import logo from "../../assets/logo.png";
   <!-- Animated Background Pattern -->
   <div class="absolute inset-0 opacity-10">
     <div
-      class="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"
+      class="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-400 rounded-full mix-blend-multiply filter blur-xl slow-pulse"
     >
     </div>
     <div
-      class="absolute top-3/4 right-1/4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"
-      style="animation-delay: 2s;"
+      class="absolute top-3/4 right-1/4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl slow-pulse"
+      style="animation-delay: 1.5s;"
     >
     </div>
     <div
-      class="absolute bottom-1/4 left-1/2 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"
-      style="animation-delay: 4s;"
+      class="absolute bottom-1/4 left-1/2 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl slow-pulse"
+      style="animation-delay: 3s;"
     >
     </div>
   </div>
@@ -43,21 +43,21 @@ import logo from "../../assets/logo.png";
         stroke="url(#waveGradient)"
         stroke-width="2"
         fill="none"
-        class="animate-pulse"></path>
+        class="slow-pulse"></path>
       <path
         d="M0,350 Q300,250 600,350 T1200,350"
         stroke="url(#waveGradient)"
         stroke-width="1"
         fill="none"
-        class="animate-pulse"
-        style="animation-delay: 1s;"></path>
+        class="slow-pulse"
+        style="animation-delay: 1.5s;"></path>
       <path
         d="M0,450 Q300,350 600,450 T1200,450"
         stroke="url(#waveGradient)"
         stroke-width="1"
         fill="none"
-        class="animate-pulse"
-        style="animation-delay: 2s;"></path>
+        class="slow-pulse"
+        style="animation-delay: 3s;"></path>
     </svg>
   </div>
 
@@ -69,26 +69,28 @@ import logo from "../../assets/logo.png";
       <!-- Microphone Icon with Pulse Effect -->
       <div class="flex justify-center mb-8">
         <div class="relative">
+          <!-- Pulse rings -->
           <div
-            class="w-24 h-24 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-full flex items-center justify-center pulse-glow p-4"
+            class="absolute inset-0 rounded-full border-2 border-cyan-400 slow-pulse-ring"
+          >
+          </div>
+          <div
+            class="absolute inset-0 rounded-full border-2 border-cyan-400 slow-pulse-ring"
+            style="animation-delay: 2s;"
+          >
+          </div>
+          <!-- Logo container - positioned above pulse rings -->
+          <div
+            class="relative z-10 w-24 h-24 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-full flex items-center justify-center slow-pulse-glow p-2"
           >
             <Image
               src={logo}
               alt="Tater Talk Microphone"
-              width={64}
-              height={64}
-              class="w-full h-full object-contain filter brightness-0 invert"
+              width={80}
+              height={80}
+              densities={[1, 2]}
+              class="w-20 h-20 object-contain bg-white rounded-full"
             />
-          </div>
-          <!-- Pulse rings -->
-          <div
-            class="absolute inset-0 rounded-full border-2 border-cyan-400 animate-ping"
-          >
-          </div>
-          <div
-            class="absolute inset-0 rounded-full border-2 border-cyan-400 animate-ping"
-            style="animation-delay: 0.5s;"
-          >
           </div>
         </div>
       </div>
@@ -158,6 +160,24 @@ import logo from "../../assets/logo.png";
         </button>
       </div>
 
+      <!-- Scroll indicator -->
+      <div class="flex justify-center pt-8 pb-4">
+        <div class="animate-bounce">
+          <svg
+            class="w-6 h-6 text-slate-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
+      </div>
+
       <!-- Trust Indicators -->
       <div class="pt-12 space-y-4">
         <p class="text-slate-400 text-sm font-medium uppercase tracking-wider">
@@ -187,24 +207,6 @@ import logo from "../../assets/logo.png";
       </div>
     </div>
   </div>
-
-  <!-- Scroll indicator -->
-  <div
-    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
-  >
-    <svg
-      class="w-6 h-6 text-slate-400"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-    </svg>
-  </div>
 </section>
 
 <style>
@@ -219,6 +221,6 @@ import logo from "../../assets/logo.png";
   }
 
   .float-animation {
-    animation: float 6s ease-in-out infinite;
+    animation: float 3s ease-in-out infinite;
   }
 </style>
