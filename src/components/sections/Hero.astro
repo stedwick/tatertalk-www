@@ -1,5 +1,6 @@
 ---
-
+import { Image } from "astro:assets";
+import logo from "../../assets/logo.png";
 ---
 
 <section
@@ -69,9 +70,15 @@
       <div class="flex justify-center mb-8">
         <div class="relative">
           <div
-            class="w-24 h-24 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-full flex items-center justify-center pulse-glow"
+            class="w-24 h-24 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-full flex items-center justify-center pulse-glow p-4"
           >
-            <span class="text-4xl">🎙️</span>
+            <Image
+              src={logo}
+              alt="Tater Talk Microphone"
+              width={64}
+              height={64}
+              class="w-full h-full object-contain filter brightness-0 invert"
+            />
           </div>
           <!-- Pulse rings -->
           <div
