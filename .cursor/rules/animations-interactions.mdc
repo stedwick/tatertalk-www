@@ -1,0 +1,41 @@
+---
+globs: *.astro,*.css
+---
+
+# Animation & Interaction Patterns
+
+## Signature Animations
+All custom animations are defined in [global.css](mdc:src/styles/global.css):
+
+### Core Animations
+- **pulseGlow**: Animated glow effect for microphone buttons
+- **gradientShift**: Color-shifting background gradients
+- **typing**: Typewriter text effect for demo sections
+- **float**: Subtle floating motion for decorative elements
+- **spin-slow**: 20-second rotation for sound wave graphics
+
+### Tailwind Animations
+- `animate-pulse`: For status indicators and breathing effects
+- `animate-ping`: For expanding rings around microphones
+- `animate-bounce`: For scroll indicators and attention elements
+
+## Hover Interactions
+- **Cards**: `hover:scale-[1.02] hover:-translate-y-2` with border color changes
+- **Buttons**: `hover:scale-105` with gradient color shifts
+- **Icons**: `hover:scale-110` for microphone and interactive elements
+
+## Background Patterns
+- **Blurred circles**: Large colored circles with `mix-blend-multiply filter blur-3xl`
+- **Sound waves**: SVG paths with gradient strokes and staggered pulse animations
+- **Opacity layers**: Keep decorative elements at 5-10% opacity
+
+## Interactive Elements
+- **Microphone buttons**: Use `pulse-glow` class with gradient backgrounds
+- **Feature cards**: Combine hover scaling with border/shadow changes
+- **CTAs**: Gradient backgrounds with arrow icons that translate on hover
+
+## Animation Timing
+- **Hover transitions**: `transition-all duration-300`
+- **Card animations**: `transition-all duration-500`
+- **Background shifts**: 6-second cycles for ambient motion
+- **Stagger delays**: 0.1-0.5s delays for sequential animations

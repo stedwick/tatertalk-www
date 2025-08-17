@@ -1,0 +1,43 @@
+---
+description: Development workflow and conventions for Tater Talk project
+---
+
+# Tater Talk Development Workflow
+
+## Tech Stack
+- **Framework**: Astro 5.13.2 for static site generation
+- **Styling**: Tailwind CSS 4.x with custom CSS variables
+- **Typography**: Inter font family from Google Fonts
+- **Icons**: Emoji-based with microphone (🎙️) as primary brand icon
+
+## Development Commands
+```bash
+npm run dev     # Start development server on localhost:4321
+npm run build   # Build for production
+npm run preview # Preview production build
+```
+
+## Code Formatting
+- **Prettier**: Auto-format on save with proper line breaks
+- **Quote style**: Double quotes for consistency
+- **Indentation**: 2 spaces for HTML/CSS/JS
+- **Line length**: Break long attributes across multiple lines
+
+## Component Development
+1. **Create in appropriate directory**: `layout/`, `sections/`, or `ui/`
+2. **Use TypeScript interfaces** for props
+3. **Import only necessary dependencies**
+4. **Follow responsive-first design patterns**
+5. **Test on multiple screen sizes**
+
+## Styling Best Practices
+- **Tailwind-first**: Use utility classes before custom CSS
+- **Custom animations**: Add to [global.css](mdc:src/styles/global.css) for reusability
+- **CSS variables**: Use design system variables for colors
+- **Performance**: Prefer CSS animations over JavaScript
+
+## Git Workflow
+- **Commit messages**: Use conventional commits format
+- **Feature branches**: Create branches for new sections/features
+- **Pull requests**: Include screenshots for UI changes
+- **Testing**: Verify responsive design and animations work

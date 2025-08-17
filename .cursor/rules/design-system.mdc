@@ -1,0 +1,37 @@
+---
+globs: *.astro,*.css
+---
+
+# Tater Talk Design System
+
+## Color Palette (CSS Variables)
+Always use these CSS custom properties defined in [global.css](mdc:src/styles/global.css):
+```css
+--color-deep-purple: #1a0b2e    /* Primary background */
+--color-electric-blue: #16537e   /* Accents */
+--color-bright-cyan: #1dd3b0     /* Highlights */
+--color-warm-orange: #ff6b35     /* CTAs */
+--color-sound-wave-start: #7209b7 /* Gradient start */
+--color-sound-wave-end: #2980b9   /* Gradient end */
+--color-microphone-gold: #f39c12  /* Special accents */
+```
+
+## Pre-built Utility Classes
+- `.gradient-text` - Cyan to orange gradient text
+- `.pulse-glow` - Animated glow effect for interactive elements
+- `.animated-gradient` - Shifting background gradient
+- `.typing-animation` - Typewriter text effect
+- `.animate-spin-slow` - Slow rotation animation
+
+## Audio Theme Elements
+- **Microphone emoji**: 🎙️ for primary branding
+- **Sound wave patterns**: SVG paths in hero and backgrounds
+- **Pulse animations**: For microphone buttons and interactive elements
+- **Speech-focused copy**: "Talk", "Voice", "Listen", "Speak"
+
+## Component Patterns
+- **Gradient backgrounds**: Use `bg-gradient-to-br from-cyan-400 to-blue-600`
+- **Card hover effects**: Scale and glow on hover
+- **Button styles**: Gradient backgrounds with hover scale transforms
+- **Section spacing**: `py-24` for major sections
+- **Container max-width**: `max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`

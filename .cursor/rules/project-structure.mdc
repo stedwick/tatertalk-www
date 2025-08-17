@@ -1,0 +1,31 @@
+---
+alwaysApply: true
+---
+
+# Tater Talk Project Structure Guide
+
+## Main Architecture
+- Main entry point: [src/pages/index.astro](mdc:src/pages/index.astro) - Landing page combining all sections
+- Base layout: [src/layouts/Layout.astro](mdc:src/layouts/Layout.astro) - Global HTML structure with fonts and meta tags
+- Global styles: [src/styles/global.css](mdc:src/styles/global.css) - Design system, animations, and Tailwind imports
+
+## Component Organization
+```
+src/components/
+├── layout/          # Site-wide layout components
+│   ├── Header.astro # Fixed navigation header
+│   └── Footer.astro # Site footer with links
+├── sections/        # Main page sections
+│   ├── Hero.astro          # Hero section with CTA
+│   ├── Features.astro      # Feature showcase grid
+│   ├── Demo.astro          # Interactive demo mockup
+│   └── CallToAction.astro  # Final conversion section
+└── ui/              # Reusable UI components
+    └── FeatureCard.astro   # Individual feature cards
+```
+
+## Design Philosophy
+- **Audio-themed branding**: Microphone icons, sound waves, speech-focused copy
+- **Dark theme**: Purple/cyan gradients with professional appearance
+- **Typecraft.dev inspiration**: Similar aesthetic but tailored for speech-to-text
+- **Accessibility focus**: High contrast, semantic HTML, screen reader friendly

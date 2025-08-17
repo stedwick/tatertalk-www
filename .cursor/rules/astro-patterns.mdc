@@ -1,0 +1,51 @@
+---
+globs: *.astro
+---
+
+# Astro Component Patterns for Tater Talk
+
+## Component Structure
+```astro
+---
+// TypeScript frontmatter for props and logic
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!-- HTML template with Tailwind classes -->
+<section class="py-24 relative">
+  <!-- Content here -->
+</section>
+
+<style>
+  /* Component-specific styles if needed */
+</style>
+```
+
+## Import Conventions
+- Use double quotes for consistency: `import Component from "../path/Component.astro";`
+- Import order: Layout components, then sections, then UI components
+- No need to import global.css in individual components (handled by Layout)
+
+## Section Components Pattern
+All major sections ([Hero](mdc:src/components/sections/Hero.astro), [Features](mdc:src/components/sections/Features.astro), etc.) follow:
+- `id` attribute for navigation anchors
+- `py-24 relative` classes for consistent spacing
+- Background decorative elements with low opacity
+- Responsive container: `max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`
+
+## Animation Implementation
+- Use CSS custom animations defined in [global.css](mdc:src/styles/global.css)
+- Combine with Tailwind utilities: `animate-pulse`, `hover:scale-105`
+- Stagger animations with `style="animation-delay: 0.5s;"`
+- Prefer CSS animations over JavaScript for performance
+
+## Responsive Design
+- Mobile-first approach with Tailwind breakpoints
+- Grid layouts: `grid-cols-1 md:grid-cols-2 lg:grid-cols-4`
+- Text sizing: `text-xl sm:text-2xl lg:text-3xl`
+- Spacing adjustments: `space-x-4 sm:space-x-6 lg:space-x-8`
