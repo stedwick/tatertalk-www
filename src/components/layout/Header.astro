@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { PUBLIC_APP_URL } from "astro:env/client";
 import logo from "../../assets/logo.png";
 ---
 
@@ -57,11 +58,12 @@ import logo from "../../assets/logo.png";
         >
           Sign In
         </button>
-        <button
-          class="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 cursor-pointer"
+        <a
+          href={PUBLIC_APP_URL}
+          class="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 cursor-pointer inline-block"
         >
           Try Free
-        </button>
+        </a>
       </div>
 
       <!-- Mobile menu button -->
