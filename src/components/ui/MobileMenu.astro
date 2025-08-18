@@ -1,0 +1,162 @@
+---
+import { PUBLIC_APP_URL } from "astro:env/client";
+---
+
+<!-- Mobile menu button -->
+<div class="md:hidden">
+  <button
+    id="mobile-menu-button"
+    type="button"
+    class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+    aria-label="Toggle menu"
+  >
+    <!-- Hamburger icon -->
+    <svg
+      id="hamburger-icon"
+      class="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+    <!-- Close icon (hidden by default) -->
+    <svg
+      id="close-icon"
+      class="h-6 w-6 hidden"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  </button>
+</div>
+
+<!-- Mobile menu overlay -->
+<div
+  id="mobile-menu"
+  class="md:hidden fixed inset-0 top-16 z-50 transform translate-x-full transition-transform duration-300 ease-in-out"
+  style="background: #0f172a !important; background-color: #0f172a !important; opacity: 1 !important; height: calc(100dvh - 4rem) !important;"
+>
+  <div
+    class="flex flex-col h-full w-full"
+    style="background-color: #0f172a !important; background: #0f172a !important;"
+  >
+    <!-- Navigation Links -->
+    <nav class="flex-1 px-4 pt-8 pb-4 space-y-6">
+      <a
+        href="#features"
+        class="block text-2xl font-medium text-slate-300 hover:text-white transition-colors duration-200 cursor-pointer mobile-menu-link"
+        >Features</a
+      >
+      <a
+        href="#demo"
+        class="block text-2xl font-medium text-slate-300 hover:text-white transition-colors duration-200 cursor-pointer mobile-menu-link"
+        >Demo</a
+      >
+      <!-- <a
+        href="#pricing"
+        class="block text-2xl font-medium text-slate-300 hover:text-white transition-colors duration-200 cursor-pointer mobile-menu-link"
+        >Pricing</a
+      >
+      <a
+        href="#faq"
+        class="block text-2xl font-medium text-slate-300 hover:text-white transition-colors duration-200 cursor-pointer mobile-menu-link"
+        >FAQ</a
+      > -->
+    </nav>
+
+    <!-- Mobile CTA Buttons -->
+    <div class="px-4 pb-8 space-y-4">
+      <a
+        href={`${PUBLIC_APP_URL}/login`}
+        class="block w-full py-3 text-xl text-center bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 cursor-pointer"
+      >
+        Sign In
+      </a>
+      <a
+        href={PUBLIC_APP_URL}
+        class="block w-full py-3 text-xl text-center bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 cursor-pointer"
+      >
+        Try Free
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Mobile menu toggle functionality
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const hamburgerIcon = document.getElementById("hamburger-icon");
+  const closeIcon = document.getElementById("close-icon");
+  const mobileMenuLinks = document.querySelectorAll(".mobile-menu-link");
+
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+    console.log("Menu toggled:", isMenuOpen, mobileMenu);
+
+    if (isMenuOpen) {
+      // Show menu with slide animation
+      mobileMenu?.classList.remove("translate-x-full");
+      mobileMenu?.classList.add("translate-x-0");
+      hamburgerIcon?.classList.add("hidden");
+      closeIcon?.classList.remove("hidden");
+      // Prevent scrolling when menu is open
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+      // Force background color as backup
+      if (mobileMenu) {
+        mobileMenu.style.backgroundColor = "#0f172a";
+        mobileMenu.style.background = "#0f172a";
+        mobileMenu.style.opacity = "1";
+      }
+    } else {
+      // Hide menu with slide animation
+      mobileMenu?.classList.remove("translate-x-0");
+      mobileMenu?.classList.add("translate-x-full");
+      hamburgerIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
+      // Restore scrolling
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+    }
+  }
+
+  // Toggle menu on button click
+  mobileMenuButton?.addEventListener("click", toggleMenu);
+
+  // Close menu when clicking on navigation links
+  mobileMenuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (isMenuOpen) {
+        toggleMenu();
+      }
+    });
+  });
+
+  // Close menu when clicking outside
+  mobileMenu?.addEventListener("click", (e) => {
+    if (e.target === mobileMenu) {
+      toggleMenu();
+    }
+  });
+
+  // Close menu on escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && isMenuOpen) {
+      toggleMenu();
+    }
+  });
+</script>
