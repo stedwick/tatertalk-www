@@ -27,6 +27,12 @@ const { title, description = "The easiest way to talk to your computer!" } =
     />
   </head>
   <body class="overflow-x-hidden">
+    <!-- Debug: Red vertical center line (development only) -->
+    {
+      import.meta.env.DEV && (
+        <div class="fixed top-0 left-1/2 w-px h-full bg-red-500 z-[9999] pointer-events-none transform -translate-x-0.25" />
+      )
+    }
     <slot />
   </body>
 </html>
