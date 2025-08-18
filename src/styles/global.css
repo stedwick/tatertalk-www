@@ -42,6 +42,13 @@ body {
   color: white;
 }
 
+a,
+a span,
+button,
+button span {
+  text-wrap: nowrap;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
