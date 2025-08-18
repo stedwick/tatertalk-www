@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --breakpoint-sm: 35rem;
+  --breakpoint-md: 43rem;
+}
+
 /* CSS Custom Properties (CSS Variables) */
 :root {
   --color-deep-purple: #1a0b2e;
