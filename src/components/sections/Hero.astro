@@ -1,11 +1,12 @@
 ---
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 import { PUBLIC_APP_URL, PUBLIC_YOUTUBE_VIDEO_URL } from "astro:env/client";
 import logo from "../../assets/logo.png";
 ---
 
 <section
-  class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
+  class="relative min-h-screen flex items-center justify-center overflow-hidden py-16"
 >
   <!-- Animated Background Pattern -->
   <div class="absolute inset-0 opacity-10">
@@ -189,29 +190,98 @@ import logo from "../../assets/logo.png";
       </div>
 
       <!-- Trust Indicators -->
-      <div class="pt-12 space-y-4">
-        <p class="text-slate-400 text-sm font-medium uppercase tracking-wider">
+      <div class="space-y-6">
+        <p
+          class="text-slate-400 text-base font-medium uppercase tracking-wider"
+        >
           Works on all devices
         </p>
         <div
-          class="flex flex-wrap justify-center items-center gap-3 sm:gap-6 md:gap-8 text-slate-500 px-4"
+          class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 text-slate-500 px-4"
         >
-          <!-- Browser Icons -->
-          <div class="flex items-center space-x-1 sm:space-x-2">
-            <span class="text-xl sm:text-2xl">🌐</span>
-            <span class="text-xs sm:text-sm">Web Browser</span>
+          <!-- Device Icons -->
+          <div class="flex items-center space-x-2 sm:space-x-3">
+            <Icon name="mdi:web" class="w-6 h-6 sm:w-8 sm:h-8 text-slate-400" />
+            <span class="text-sm sm:text-base">Web Browser</span>
           </div>
-          <div class="flex items-center space-x-1 sm:space-x-2">
-            <span class="text-xl sm:text-2xl">💻</span>
-            <span class="text-xs sm:text-sm">Desktop</span>
+          <div class="flex items-center space-x-2 sm:space-x-3">
+            <Icon
+              name="mdi:desktop-tower-monitor"
+              class="w-6 h-6 sm:w-8 sm:h-8 text-slate-400"
+            />
+            <span class="text-sm sm:text-base">Desktop</span>
           </div>
-          <div class="flex items-center space-x-1 sm:space-x-2">
-            <span class="text-xl sm:text-2xl">📱</span>
-            <span class="text-xs sm:text-sm">Mobile</span>
+          <div class="flex items-center space-x-2 sm:space-x-3">
+            <Icon
+              name="mdi:cellphone"
+              class="w-6 h-6 sm:w-8 sm:h-8 text-slate-400"
+            />
+            <span class="text-sm sm:text-base">Mobile</span>
           </div>
-          <div class="flex items-center space-x-1 sm:space-x-2">
-            <span class="text-xl sm:text-2xl">📟</span>
-            <span class="text-xs sm:text-sm">Tablet</span>
+          <div class="flex items-center space-x-2 sm:space-x-3">
+            <Icon
+              name="mdi:tablet"
+              class="w-6 h-6 sm:w-8 sm:h-8 text-slate-400"
+            />
+            <span class="text-sm sm:text-base">Tablet</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- OS and Platform Compatibility -->
+      <div class="pt-8 space-y-6">
+        <p
+          class="text-slate-400 text-base font-medium uppercase tracking-wider"
+        >
+          And All Platforms
+        </p>
+        <div
+          class="flex flex-wrap justify-center items-center gap-3 sm:gap-5 md:gap-7 text-slate-500 px-4"
+        >
+          <!-- Desktop OS -->
+          <div class="flex items-center space-x-2 sm:space-x-3">
+            <Icon
+              name="mdi:microsoft-windows"
+              class="w-5 h-5 sm:w-6 sm:h-6 text-slate-400"
+            />
+            <span class="text-sm sm:text-base">Windows</span>
+          </div>
+          <div class="flex items-center space-x-2 sm:space-x-3">
+            <Icon
+              name="mdi:apple"
+              class="w-5 h-5 sm:w-6 sm:h-6 text-slate-400"
+            />
+            <span class="text-sm sm:text-base">Mac</span>
+          </div>
+          <div class="flex items-center space-x-2 sm:space-x-3">
+            <Icon
+              name="mdi:linux"
+              class="w-5 h-5 sm:w-6 sm:h-6 text-slate-400"
+            />
+            <span class="text-sm sm:text-base">Linux</span>
+          </div>
+
+          <!-- Mobile Platforms -->
+          <div class="flex items-center space-x-2 sm:space-x-3">
+            <Icon
+              name="mdi:apple-ios"
+              class="w-5 h-5 sm:w-6 sm:h-6 text-slate-400"
+            />
+            <span class="text-sm sm:text-base">iPhone</span>
+          </div>
+          <div class="flex items-center space-x-2 sm:space-x-3">
+            <Icon
+              name="mdi:tablet-ipad"
+              class="w-5 h-5 sm:w-6 sm:h-6 text-slate-400"
+            />
+            <span class="text-sm sm:text-base">iPad</span>
+          </div>
+          <div class="flex items-center space-x-2 sm:space-x-3">
+            <Icon
+              name="mdi:android"
+              class="w-5 h-5 sm:w-6 sm:h-6 text-slate-400"
+            />
+            <span class="text-sm sm:text-base">Android</span>
           </div>
         </div>
       </div>
