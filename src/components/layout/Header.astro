@@ -29,15 +29,15 @@ import MobileMenu from "../ui/MobileMenu.astro";
       </div>
 
       <!-- Navigation -->
-      <nav class="hidden md:flex items-center space-x-8">
+      <nav class="hidden md:flex items-center space-x-16">
         <a
           href="#features"
-          class="text-slate-300 hover:text-white transition-colors duration-200 cursor-pointer"
+          class="text-slate-300 hover:text-white transition-colors duration-200 cursor-pointer underline"
           >Features</a
         >
         <a
           href="#demo"
-          class="text-slate-300 hover:text-white transition-colors duration-200 cursor-pointer"
+          class="text-slate-300 hover:text-white transition-colors duration-200 cursor-pointer underline"
           >Demo</a
         >
         <!-- <a
@@ -54,11 +54,12 @@ import MobileMenu from "../ui/MobileMenu.astro";
 
       <!-- CTA Button -->
       <div class="flex items-center space-x-4">
-        <button
-          class="hidden sm:block px-4 py-2 text-slate-300 hover:text-white transition-colors duration-200 cursor-pointer"
+        <a
+          href={`${PUBLIC_APP_URL}/login`}
+          class="hidden sm:block px-4 py-2 text-slate-300 hover:text-white transition-colors duration-200 cursor-pointer border border-slate-600 rounded-lg"
         >
           Sign In
-        </button>
+        </a>
         <a
           href={PUBLIC_APP_URL}
           class="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 cursor-pointer inline-block"
