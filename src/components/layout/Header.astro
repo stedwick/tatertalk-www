@@ -28,19 +28,21 @@ import MobileMenu from "../ui/MobileMenu.astro";
         </div>
       </div>
 
-      <!-- Navigation -->
-      <nav class="hidden md:flex items-center space-x-16">
-        <a
-          href="#features"
-          class="text-slate-300 hover:text-white transition-colors duration-200 cursor-pointer underline"
-          >Features</a
-        >
-        <a
-          href="#demo"
-          class="text-slate-300 hover:text-white transition-colors duration-200 cursor-pointer underline"
-          >Demo</a
-        >
-        <!-- <a
+      <!-- CTA Button -->
+      <div class="flex items-center space-x-4">
+        <!-- Navigation -->
+        <nav class="flex items-center space-x-4">
+          <a
+            href="#demo"
+            class="text-slate-300 hover:text-white transition-colors duration-200 cursor-pointer underline hidden sm:block"
+            >Demo</a
+          >
+          <a
+            href="#features"
+            class="text-slate-300 hover:text-white transition-colors duration-200 cursor-pointer underline hidden sm:block"
+            >Features</a
+          >
+          <!-- <a
           href="#pricing"
           class="text-slate-300 hover:text-white transition-colors duration-200 cursor-pointer"
           >Pricing</a
@@ -50,23 +52,20 @@ import MobileMenu from "../ui/MobileMenu.astro";
           class="text-slate-300 hover:text-white transition-colors duration-200 cursor-pointer"
           >FAQ</a
         > -->
-      </nav>
-
-      <!-- CTA Button -->
-      <div class="flex items-center space-x-4">
-        <a
-          href={`${PUBLIC_APP_URL}/login`}
-          class="hidden sm:block px-4 py-2 text-slate-300 hover:text-white transition-colors duration-200 cursor-pointer border border-slate-600 rounded-lg"
-        >
-          Sign In
-        </a>
-        <a
-          href={PUBLIC_APP_URL}
-          class="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 cursor-pointer inline-block"
-        >
-          <span class="hidden xs:inline">Talk Now</span>
-          <span class="inline xs:hidden">Talk</span>
-        </a>
+          <a
+            href={`${PUBLIC_APP_URL}/login`}
+            class="hidden sm:block px-4 py-2 text-slate-300 hover:text-white transition-colors duration-200 cursor-pointer border border-slate-600 rounded-lg"
+          >
+            Sign In
+          </a>
+          <a
+            href={PUBLIC_APP_URL}
+            class="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 cursor-pointer inline-block"
+          >
+            <span class="hidden xs:inline">Talk Now</span>
+            <span class="inline xs:hidden">Talk</span>
+          </a>
+        </nav>
       </div>
 
       <!-- Mobile Menu -->
