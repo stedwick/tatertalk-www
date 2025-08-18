@@ -181,6 +181,7 @@ import logo from "../../assets/logo.png";
       hamburgerIcon?.classList.add("hidden");
       closeIcon?.classList.remove("hidden");
       // Prevent scrolling when menu is open
+      document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
       // Force background color as backup
       if (mobileMenu) {
@@ -195,6 +196,7 @@ import logo from "../../assets/logo.png";
       hamburgerIcon?.classList.remove("hidden");
       closeIcon?.classList.add("hidden");
       // Restore scrolling
+      document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
     }
   }
