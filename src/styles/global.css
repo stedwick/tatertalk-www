@@ -2,9 +2,9 @@
 
 @theme {
   --breakpoint-xs: 20rem;
-  --breakpoint-sm: 32rem;
+  /* --breakpoint-sm: 32rem;
   --breakpoint-md: 40rem;
-  --breakpoint-lg: 50rem;
+  --breakpoint-lg: 50rem; */
 }
 
 /* CSS Custom Properties (CSS Variables) */
