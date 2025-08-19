@@ -179,18 +179,32 @@ html {
   animation: float 6s ease-in-out infinite;
 }
 
+@keyframes typing-xs {
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  }
+}
+
+.typing-animation-xs {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing-xs 1.5s steps(40, end) infinite;
+}
+
 /* Typing animation */
 @keyframes typing {
   from {
     width: 0;
   }
   to {
-    width: 100%;
+    width: 90%;
   }
 }
 
 .typing-animation {
-  display: inline-block;
   overflow: hidden;
   white-space: nowrap;
   animation: typing 4s steps(40, end) infinite;

@@ -50,27 +50,31 @@ import logo from "../../assets/logo.png";
           <div class="space-y-3 inline-block">
             <div class="flex items-center space-x-3">
               <div
-                class="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white font-semibold text-sm"
+                class="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0"
               >
                 1
               </div>
-              <p class="text-slate-300">Click the microphone button</p>
+              <p class="text-slate-300 text-left">
+                Click the microphone button
+              </p>
             </div>
             <div class="flex items-center space-x-3">
               <div
-                class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-sm"
+                class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0"
               >
                 2
               </div>
-              <p class="text-slate-300">Start speaking naturally</p>
+              <p class="text-slate-300 text-left">Start speaking naturally</p>
             </div>
             <div class="flex items-center space-x-3">
               <div
-                class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white font-semibold text-sm"
+                class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0"
               >
                 3
               </div>
-              <p class="text-slate-300">Watch your words appear instantly</p>
+              <p class="text-slate-300 text-left">
+                Watch your words appear instantly
+              </p>
             </div>
           </div>
         </div>
@@ -149,8 +153,13 @@ import logo from "../../assets/logo.png";
                 <div class="text-slate-400 text-sm font-medium">
                   Live Transcription:
                 </div>
-                <div class="text-white text-lg leading-relaxed">
-                  <span class="typing-animation">
+                <div class="text-white text-lg text-left leading-relaxed">
+                  <span class="inline-block xs:hidden typing-animation-xs">
+                    Hello, this is a demonstration of Tater Talk's real-time
+                    speech-to-text capabilities. As you can see, the words
+                    appear instantly as I speak...
+                  </span>
+                  <span class="hidden xs:inline-block typing-animation">
                     Hello, this is a demonstration of Tater Talk's real-time
                     speech-to-text capabilities. As you can see, the words
                     appear instantly as I speak...
@@ -225,22 +234,6 @@ import logo from "../../assets/logo.png";
 </section>
 
 <style>
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-
-  .typing-animation {
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typing 4s steps(40, end) infinite;
-  }
-
   @keyframes spin-slow {
     from {
       transform: rotate(0deg);
