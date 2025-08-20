@@ -1,5 +1,6 @@
 ---
 import FeatureCard from "../ui/FeatureCard.astro";
+import { Icon } from "astro-icon/components";
 
 const features = [
   {
@@ -174,7 +175,7 @@ const features = [
             <div
               class="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1"
             >
-              <span class="text-white text-sm">📝</span>
+              <Icon name="mdi:file-document-edit" class="w-5 h-5 text-white" />
             </div>
             <div>
               <h4 class="text-lg font-semibold text-white">Content Creation</h4>
@@ -189,7 +190,7 @@ const features = [
             <div
               class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1"
             >
-              <span class="text-white text-sm">💼</span>
+              <Icon name="mdi:briefcase" class="w-5 h-5 text-white" />
             </div>
             <div>
               <h4 class="text-lg font-semibold text-white">
@@ -205,7 +206,7 @@ const features = [
             <div
               class="w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1"
             >
-              <span class="text-white text-sm">⚙️</span>
+              <Icon name="mdi:code-braces" class="w-5 h-5 text-white" />
             </div>
             <div>
               <h4 class="text-lg font-semibold text-white">Development</h4>
