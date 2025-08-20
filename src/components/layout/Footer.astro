@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../../assets/logo.png";
+import { PUBLIC_YOUTUBE_VIDEO_URL } from "astro:env/client";
 
 const currentYear = new Date().getFullYear();
 ---
@@ -9,9 +10,11 @@ const currentYear = new Date().getFullYear();
   class="bg-slate-900/50 backdrop-blur-sm border-t border-slate-800 py-16"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
       <!-- Logo and Description -->
-      <div class="md:col-span-2 space-y-4">
+      <div
+        class="space-y-4 flex flex-col items-start xs:items-center sm:items-start"
+      >
         <div class="flex items-center space-x-3">
           <div class="w-10 h-10 rounded-lg overflow-hidden">
             <Image
@@ -28,7 +31,9 @@ const currentYear = new Date().getFullYear();
             <span class="text-xl font-bold gradient-text">Talk</span>
           </div>
         </div>
-        <p class="text-slate-400 max-w-md">
+        <p
+          class="text-slate-400 max-w-md text-left xs:text-center sm:text-left"
+        >
           The easiest way to talk to your computer. Transform your voice into
           text with our cross-platform speech-to-text web app.
         </p>
@@ -67,81 +72,82 @@ const currentYear = new Date().getFullYear();
         </div>
       </div>
 
-      <!-- Quick Links -->
-      <div>
-        <h3 class="text-white font-semibold mb-4">Product</h3>
-        <ul class="space-y-2">
-          <li>
-            <a
-              href="#features"
-              class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
-              >Features</a
-            >
-          </li>
-          <li>
-            <a
-              href="#demo"
-              class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
-              >Demo</a
-            >
-          </li>
-          <li>
-            <a
-              href="#pricing"
-              class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
-              >Pricing</a
-            >
-          </li>
-          <li>
-            <a
-              href="#faq"
-              class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
-              >FAQ</a
-            >
-          </li>
-        </ul>
-      </div>
+      <div class="flex flex-col xs:flex-row gap-8 xs:justify-around">
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-white font-semibold mb-4">Product</h3>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="#features"
+                class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                >Features</a
+              >
+            </li>
+            <li>
+              <a
+                href="#demo"
+                class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                >Demo</a
+              >
+            </li>
+            <li>
+              <a
+                href="#features"
+                class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                >Pricing (Free!)</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://phils.app/"
+                class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                >Blog</a
+              >
+            </li>
+          </ul>
+        </div>
 
-      <!-- Support -->
-      <div>
-        <h3 class="text-white font-semibold mb-4">Support</h3>
-        <ul class="space-y-2">
-          <li>
-            <a
-              href="#"
-              class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
-              >Help Center</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
-              >Contact Us</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
-              >Privacy Policy</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
-              >Terms of Service</a
-            >
-          </li>
-        </ul>
+        <!-- Support -->
+        <div>
+          <h3 class="text-white font-semibold mb-4">Support</h3>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href={PUBLIC_YOUTUBE_VIDEO_URL}
+                class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                >1-Minute Tutorial</a
+              >
+            </li>
+            <li>
+              <a
+                href="mailto:tatertalk@googlegroups.com"
+                class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                >Contact Phil</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://phils.app/blog/privacy/"
+                class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://phils.app/"
+                class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                >Terms of Service</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <div class="border-t border-slate-800 mt-12 pt-8 text-center">
       <p class="text-slate-400">
-        © {currentYear} Tater Talk. All rights reserved. Made with ❤️ for better
-        accessibility.
+        © {currentYear} by Philip Brocoum. Made with ❤️ for better accessibility.
       </p>
     </div>
   </div>
