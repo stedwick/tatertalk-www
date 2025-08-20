@@ -10,7 +10,9 @@ export default defineConfig({
     icon({
       include: {
         mdi: ['*'],
-        'simple-icons': ['*']
+        'simple-icons': ['*'],
+        'flat-color-icons': ['*'],
+        'icon-park': ['*']
       }
     })
   ],
