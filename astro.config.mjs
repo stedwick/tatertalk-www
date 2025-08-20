@@ -15,7 +15,8 @@ export default defineConfig({
         'icon-park': ['*'],
         'tdesign': ['*'],
         'noto': ['*'],
-        'twemoji': ['*']
+        'twemoji': ['*'],
+        'logos': ['*']
       }
     })
   ],
