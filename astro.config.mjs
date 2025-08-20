@@ -12,7 +12,10 @@ export default defineConfig({
         mdi: ['*'],
         'simple-icons': ['*'],
         'flat-color-icons': ['*'],
-        'icon-park': ['*']
+        'icon-park': ['*'],
+        'tdesign': ['*'],
+        'noto': ['*'],
+        'twemoji': ['*']
       }
     })
   ],
