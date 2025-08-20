@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon/components";
+
 export interface Props {
   title: string;
   description: string;
@@ -46,9 +48,10 @@ const {
             : "bg-slate-700/50 group-hover:scale-110"
         }`}
       >
-        <span class={`text-4xl ${comingSoon ? "grayscale opacity-50" : ""}`}
-          >{icon}</span
-        >
+        <Icon
+          name={icon}
+          class={`w-10 h-10 ${comingSoon ? "grayscale opacity-50" : ""}`}
+        />
       </div>
     </div>
 
