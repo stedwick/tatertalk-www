@@ -1,45 +1,99 @@
 ---
 export interface Props {
-	title: string;
-	description: string;
-	icon: string;
-	gradient: string;
-	delay?: string;
+  title: string;
+  description: string;
+  icon: string;
+  gradient: string;
+  delay?: string;
+  comingSoon?: boolean;
 }
 
-const { title, description, icon, gradient, delay = "0s" } = Astro.props;
+const {
+  title,
+  description,
+  icon,
+  gradient,
+  delay = "0s",
+  comingSoon = false,
+} = Astro.props;
 ---
 
-<div 
-	class="group relative bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 hover:border-slate-600 transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-2"
-	style={`animation-delay: ${delay}`}
+<div
+  class={`group relative backdrop-blur-sm border rounded-2xl p-8 transition-all duration-500 transform ${
+    comingSoon
+      ? "bg-slate-900/30 border-slate-800 opacity-60 cursor-default"
+      : "bg-slate-800/50 border-slate-700 hover:border-slate-600 hover:scale-[1.02] hover:-translate-y-2"
+  }`}
+  style={`animation-delay: ${delay}`}
 >
-	<!-- Gradient Background -->
-	<div class={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500 ${gradient}`}></div>
-	
-	<!-- Content -->
-	<div class="relative z-10 space-y-6">
-		<!-- Icon -->
-		<div class="flex justify-center">
-			<div class="w-20 h-20 bg-slate-700/50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-				<span class="text-4xl">{icon}</span>
-			</div>
-		</div>
+  <!-- Gradient Background -->
+  {
+    !comingSoon && (
+      <div
+        class={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500 ${gradient}`}
+      />
+    )
+  }
 
-		<!-- Title -->
-		<h3 class="text-2xl font-bold text-white text-center group-hover:text-cyan-400 transition-colors duration-300">
-			{title}
-		</h3>
+  <!-- Content -->
+  <div class="relative z-10 space-y-6">
+    <!-- Icon -->
+    <div class="flex justify-center">
+      <div
+        class={`w-20 h-20 rounded-xl flex items-center justify-center transition-transform duration-300 ${
+          comingSoon
+            ? "bg-slate-800/30"
+            : "bg-slate-700/50 group-hover:scale-110"
+        }`}
+      >
+        <span class={`text-4xl ${comingSoon ? "grayscale opacity-50" : ""}`}
+          >{icon}</span
+        >
+      </div>
+    </div>
 
-		<!-- Description -->
-		<p class="text-slate-300 text-center leading-relaxed group-hover:text-slate-200 transition-colors duration-300">
-			{description}
-		</p>
+    <!-- Title -->
+    <div class="text-center space-y-2">
+      <h3
+        class={`text-2xl font-bold text-center transition-colors duration-300 ${
+          comingSoon ? "text-slate-500" : "text-white group-hover:text-cyan-400"
+        }`}
+      >
+        {title}
+      </h3>
+      {
+        comingSoon && (
+          <div class="inline-flex items-center space-x-1 bg-slate-800/50 border border-slate-700 rounded-full px-3 py-1">
+            <span class="w-2 h-2 bg-orange-400 rounded-full" />
+            <span class="text-xs font-medium text-slate-400">Coming Soon</span>
+          </div>
+        )
+      }
+    </div>
 
-		<!-- Hover Glow Effect -->
-		<div class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-br from-cyan-400/20 to-blue-600/20 blur-xl"></div>
-	</div>
+    <!-- Description -->
+    <p
+      class={`text-center leading-relaxed transition-colors duration-300 ${
+        comingSoon
+          ? "text-slate-500"
+          : "text-slate-300 group-hover:text-slate-200"
+      }`}
+    >
+      {description}
+    </p>
 
-	<!-- Bottom Accent -->
-	<div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-2xl"></div>
+    <!-- Hover Glow Effect -->
+    {
+      !comingSoon && (
+        <div class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-br from-cyan-400/20 to-blue-600/20 blur-xl" />
+      )
+    }
+  </div>
+
+  <!-- Bottom Accent -->
+  {
+    !comingSoon && (
+      <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-2xl" />
+    )
+  }
 </div>
