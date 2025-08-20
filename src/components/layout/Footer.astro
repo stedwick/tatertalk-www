@@ -2,7 +2,18 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import logo from "../../assets/logo.png";
-import { PUBLIC_YOUTUBE_VIDEO_URL } from "astro:env/client";
+import {
+  PUBLIC_YOUTUBE_VIDEO_URL,
+  PUBLIC_TWITTER_URL,
+  PUBLIC_GITHUB_URL,
+  PUBLIC_YOUTUBE_CHANNEL_URL,
+  PUBLIC_FACEBOOK_URL,
+  PUBLIC_PERSONAL_WEBSITE_URL,
+  PUBLIC_PHILS_APP_URL,
+  PUBLIC_LINKEDIN_URL,
+  PUBLIC_PRIVACY_POLICY_URL,
+  PUBLIC_MAILTO_URL,
+} from "astro:env/client";
 
 const currentYear = new Date().getFullYear();
 ---
@@ -40,7 +51,7 @@ const currentYear = new Date().getFullYear();
         </p>
         <div class="flex space-x-4">
           <a
-            href="https://x.com/stedwick"
+            href={PUBLIC_TWITTER_URL}
             title="Follow @stedwick on X (Twitter)"
             class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
           >
@@ -56,7 +67,7 @@ const currentYear = new Date().getFullYear();
             </svg>
           </a>
           <a
-            href="https://github.com/stedwick"
+            href={PUBLIC_GITHUB_URL}
             title="View @stedwick's code on GitHub"
             class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
           >
@@ -73,35 +84,35 @@ const currentYear = new Date().getFullYear();
             </svg>
           </a>
           <a
-            href="https://www.youtube.com/@PhilipBrocoum"
+            href={PUBLIC_YOUTUBE_CHANNEL_URL}
             title="Watch Philip's videos on YouTube"
             class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
           >
             <Icon name="simple-icons:youtube" class="w-5 h-5" />
           </a>
           <a
-            href="https://www.facebook.com/philip.brocoum/"
+            href={PUBLIC_FACEBOOK_URL}
             title="Connect with Philip on Facebook"
             class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
           >
             <Icon name="simple-icons:facebook" class="w-5 h-5" />
           </a>
           <a
-            href="https://philipbrocoum.com"
+            href={PUBLIC_PERSONAL_WEBSITE_URL}
             title="Visit Philip's personal website"
             class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
           >
             <Icon name="mdi:web" class="w-5 h-5" />
           </a>
           <a
-            href="https://phils.app"
+            href={PUBLIC_PHILS_APP_URL}
             title="Explore Phil's App - tools and projects"
             class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
           >
             <Icon name="mdi:application" class="w-5 h-5" />
           </a>
           <a
-            href="https://www.linkedin.com/in/philipbrocoum/"
+            href={PUBLIC_LINKEDIN_URL}
             title="Connect with Philip on LinkedIn"
             class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
           >
@@ -138,7 +149,7 @@ const currentYear = new Date().getFullYear();
             </li>
             <li>
               <a
-                href="https://phils.app/"
+                href={PUBLIC_PHILS_APP_URL}
                 class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
                 >Blog</a
               >
@@ -159,21 +170,21 @@ const currentYear = new Date().getFullYear();
             </li>
             <li>
               <a
-                href="mailto:tatertalk@googlegroups.com"
+                href={PUBLIC_MAILTO_URL}
                 class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
                 >Contact Phil</a
               >
             </li>
             <li>
               <a
-                href="https://phils.app/blog/privacy/"
+                href={PUBLIC_PRIVACY_POLICY_URL}
                 class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
                 >Privacy Policy</a
               >
             </li>
             <li>
               <a
-                href="https://phils.app/"
+                href={PUBLIC_PHILS_APP_URL}
                 class="text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
                 >Terms of Service</a
               >
