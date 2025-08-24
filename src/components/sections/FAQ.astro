@@ -49,7 +49,7 @@ import { PUBLIC_APP_NAME, PUBLIC_PRIVACY_POLICY_URL } from "astro:env/client";
           <h3 class="text-lg font-semibold text-white">How accurate is it? Do you store my audio?</h3>
           <span class="text-slate-400 group-open:rotate-180 transition-transform">⌄</span>
         </summary>
-        <p class="mt-4 text-slate-300">Accuracy depends on your microphone and speech. Speak clearly; like how a newscaster reads the news. Your browser sends your speech to Google, Apple, Microsoft, or Assembly AI to do the speech-to-text, similar to dictating a text message on your phone; see the <a href={PUBLIC_PRIVACY_POLICY_URL} class="text-cyan-400 hover:text-cyan-300 transition-colors duration-200">Privacy Policy</a> for details on data handling.</p>
+        <p class="mt-4 text-slate-300">Accuracy is around 99.5%, but depends on your microphone and speech. Speak clearly; like how a newscaster reads the news. Your browser sends your speech to Google, Apple, Microsoft, or Assembly AI to do the speech-to-text, similar to dictating a text message on your phone; see the <a href={PUBLIC_PRIVACY_POLICY_URL} class="text-cyan-400 hover:text-cyan-300 transition-colors duration-200">Privacy Policy</a> for details on data handling.</p>
       </details>
 
       <details class="group border border-slate-700 rounded-xl p-6 bg-slate-900/40">
@@ -86,7 +86,7 @@ import { PUBLIC_APP_NAME, PUBLIC_PRIVACY_POLICY_URL } from "astro:env/client";
         {
           "@type": "Question",
           name: "How accurate is it? Do you store my audio?",
-          acceptedAnswer: { "@type": "Answer", text: "Accuracy depends on your microphone and speech. Speak clearly; like how a newscaster reads the news. Your browser sends your speech to Google, Apple, Microsoft, or Assembly AI to do the speech-to-text; see the Privacy Policy for details on data handling." }
+          acceptedAnswer: { "@type": "Answer", text: "Accuracy is around 99.5%, but depends on your microphone and speech. Speak clearly; like how a newscaster reads the news. Your browser sends your speech to Google, Apple, Microsoft, or Assembly AI to do the speech-to-text, similar to dictating a text message on your phone; see the Privacy Policy for details on data handling." }
         },
         {
           "@type": "Question",
