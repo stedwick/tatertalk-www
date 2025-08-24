@@ -40,8 +40,8 @@ import logo from "../../assets/logo.png";
           </h2>
 
           <p class="text-xl text-slate-300 leading-relaxed">
-            Watch how easy it is to convert your speech to text in real-time. No
-            setup required. Just click and start talking!
+            Watch real‑time speech‑to‑text dictation in your browser (Chrome/Safari).
+            No setup required. Just click and start talking!
           </p>
         </div>
 
@@ -268,3 +268,19 @@ import logo from "../../assets/logo.png";
     }
   }
 </style>
+
+<!-- VideoObject JSON-LD for Demo Video -->
+<script type="application/ld+json" is:inline>
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "Tater Talk — 1-Minute Demo",
+    description: "Watch how easy it is to convert speech to text in real-time with Tater Talk.",
+    thumbnailUrl: [
+      "https://tatertalk.app/twitter2.jpg"
+    ],
+    uploadDate: "2024-01-01",
+    embedUrl: PUBLIC_YOUTUBE_VIDEO_URL,
+    contentUrl: PUBLIC_YOUTUBE_VIDEO_URL
+  })}
+  </script>

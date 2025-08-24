@@ -1,11 +1,13 @@
 // @ts-check
 import { defineConfig, envField } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
 
 import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://tatertalk.app',
   integrations: [
     icon({
       include: {
@@ -18,7 +20,8 @@ export default defineConfig({
         'twemoji': ['*'],
         'logos': ['*']
       }
-    })
+    }),
+    sitemap()
   ],
   env: {
     schema: {

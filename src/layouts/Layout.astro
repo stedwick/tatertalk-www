@@ -1,5 +1,14 @@
 ---
 import "../styles/global.css";
+import {
+  PUBLIC_TWITTER_URL,
+  PUBLIC_GITHUB_URL,
+  PUBLIC_YOUTUBE_CHANNEL_URL,
+  PUBLIC_FACEBOOK_URL,
+  PUBLIC_PERSONAL_WEBSITE_URL,
+  PUBLIC_PHILS_APP_URL,
+  PUBLIC_LINKEDIN_URL,
+} from "astro:env/client";
 
 export interface Props {
   title: string;
@@ -16,7 +25,10 @@ const { title, description = "The easiest way to talk to your computer!" } =
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="https://tatertalk.app/" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0ea5e9" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,6 +44,7 @@ const { title, description = "The easiest way to talk to your computer!" } =
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Tater Talk" />
     <meta property="og:image" content="https://tatertalk.app/twitter2.jpg" />
 
     <!-- Twitter Meta Tags -->
@@ -40,7 +53,49 @@ const { title, description = "The easiest way to talk to your computer!" } =
     <meta property="twitter:url" content="https://tatertalk.app/" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:site" content="@stedwick" />
+    <meta name="twitter:creator" content="@stedwick" />
     <meta name="twitter:image" content="https://tatertalk.app/twitter2.jpg" />
+
+    <!-- Structured Data: WebApplication & Organization -->
+    <script type="application/ld+json" is:inline>
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        name: "Tater Talk",
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Windows, macOS, Linux, iOS, Android",
+        url: "https://tatertalk.app/",
+        description,
+        offers: { "@type": "Offer", price: 0, priceCurrency: "USD" },
+        sameAs: [
+          PUBLIC_TWITTER_URL,
+          PUBLIC_GITHUB_URL,
+          PUBLIC_YOUTUBE_CHANNEL_URL,
+          PUBLIC_FACEBOOK_URL,
+          PUBLIC_PERSONAL_WEBSITE_URL,
+          PUBLIC_PHILS_APP_URL,
+          PUBLIC_LINKEDIN_URL
+        ].filter(Boolean)
+      })}
+    </script>
+    <script type="application/ld+json" is:inline>
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "Tater Talk",
+        url: "https://tatertalk.app/",
+        sameAs: [
+          PUBLIC_TWITTER_URL,
+          PUBLIC_GITHUB_URL,
+          PUBLIC_YOUTUBE_CHANNEL_URL,
+          PUBLIC_FACEBOOK_URL,
+          PUBLIC_PERSONAL_WEBSITE_URL,
+          PUBLIC_PHILS_APP_URL,
+          PUBLIC_LINKEDIN_URL
+        ].filter(Boolean)
+      })}
+    </script>
 
     <!-- Google tag (gtag.js) -->
     <script

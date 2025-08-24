@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tatertalk.app/sitemap-index.xml
+
