@@ -16,7 +16,7 @@ const { title, description = "The easiest way to talk to your computer!" } =
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,6 +25,23 @@ const { title, description = "The easiest way to talk to your computer!" } =
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://tatertalk.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://tatertalk.app/twitter2.jpg" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="tatertalk.app" />
+    <meta property="twitter:url" content="https://tatertalk.app/" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://tatertalk.app/twitter2.jpg" />
+
     <!-- Google tag (gtag.js) -->
     <script
       is:inline
