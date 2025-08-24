@@ -25,6 +25,11 @@ export default defineConfig({
   ],
   env: {
     schema: {
+      PUBLIC_APP_NAME: envField.string({
+        context: "client",
+        access: "public",
+        default: "Tater 🥔 Talk"
+      }),
       PUBLIC_APP_URL: envField.string({
         context: "client",
         access: "public",
