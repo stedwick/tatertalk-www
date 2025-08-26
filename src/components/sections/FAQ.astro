@@ -63,38 +63,37 @@ import { PUBLIC_APP_NAME, PUBLIC_PRIVACY_POLICY_URL } from "astro:env/client";
   </div>
 
   <!-- FAQPage JSON-LD -->
-  <script type="application/ld+json" is:inline>
-    {JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "What browsers does Tater Talk support?",
-          acceptedAnswer: { "@type": "Answer", text: "Tater Talk works best in Google Chrome and also supports Safari. It runs directly in your browser. No downloads or extensions required." }
-        },
-        {
-          "@type": "Question",
-          name: "Is Tater Talk free?",
-          acceptedAnswer: { "@type": "Answer", text: "Yes. Tater Talk is free as in beer. You can optionally bring your own API keys to use premium speech models." }
-        },
-        {
-          "@type": "Question",
-          name: "Which devices and platforms are supported?",
-          acceptedAnswer: { "@type": "Answer", text: "Tater Talk is cross‑platform: Windows, macOS, Linux, iPhone, iPad, and Android. If your device has a modern browser and microphone, you're good to go." }
-        },
-        {
-          "@type": "Question",
-          name: "How accurate is it? Do you store my audio?",
-          acceptedAnswer: { "@type": "Answer", text: "Accuracy is around 99.5%, but depends on your microphone and speech. Speak clearly; like how a newscaster reads the news. Your browser sends your speech to Google, Apple, Microsoft, or Assembly AI to do the speech-to-text, similar to dictating a text message on your phone; see the Privacy Policy for details on data handling." }
-        },
-        {
-          "@type": "Question",
-          name: "Can I use my own API keys?",
-          acceptedAnswer: { "@type": "Answer", text: "Yes. Bring your own keys to unlock premium speech recognition models while keeping full control over your usage and costs." }
-        }
-      ]
-    })}
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What browsers does Tater Talk support?",
+        acceptedAnswer: { "@type": "Answer", text: "Tater Talk works best in Google Chrome and also supports Safari. It runs directly in your browser. No downloads or extensions required." }
+      },
+      {
+        "@type": "Question",
+        name: "Is Tater Talk free?",
+        acceptedAnswer: { "@type": "Answer", text: "Yes. Tater Talk is free as in beer. You can optionally bring your own API keys to use premium speech models." }
+      },
+      {
+        "@type": "Question",
+        name: "Which devices and platforms are supported?",
+        acceptedAnswer: { "@type": "Answer", text: "Tater Talk is cross‑platform: Windows, macOS, Linux, iPhone, iPad, and Android. If your device has a modern browser and microphone, you're good to go." }
+      },
+      {
+        "@type": "Question",
+        name: "How accurate is it? Do you store my audio?",
+        acceptedAnswer: { "@type": "Answer", text: "Accuracy is around 99.5%, but depends on your microphone and speech. Speak clearly; like how a newscaster reads the news. Your browser sends your speech to Google, Apple, Microsoft, or Assembly AI to do the speech-to-text, similar to dictating a text message on your phone; see the Privacy Policy for details on data handling." }
+      },
+      {
+        "@type": "Question",
+        name: "Can I use my own API keys?",
+        acceptedAnswer: { "@type": "Answer", text: "Yes. Bring your own keys to unlock premium speech recognition models while keeping full control over your usage and costs." }
+      }
+    ]
+  })}>
   </script>
 </section>
 
