@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tater Talk · Spudnik</title>
+<meta name="description" content="Free speech-to-text dictation in your browser. Desktop and mobile. No downloads, no setup, just talk.">
+<link rel="icon" href="assets/logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero.webp" media="(min-width: 700px)">
+<link rel="preload" as="image" href="assets/hero-phone.webp" media="(max-width: 699px)">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ MENU: mission control bar with altimeter ============ -->
+<header class="bar" id="bar">
+  <a class="brand" href="#top" aria-label="Tater Talk home">
+    <img src="assets/logo.webp" alt="" width="34" height="34">
+    <span>Tater&nbsp;Talk</span>
+  </a>
+  <nav class="links" aria-label="Main">
+    <a href="#demo">Demo</a>
+    <a href="#patches">Features</a>
+    <a href="#stations">Devices</a>
+    <a href="#log">FAQ</a>
+  </nav>
+  <button class="alti" id="alti" type="button" aria-label="Altimeter. Click to drop to the next stage of the trip.">
+    <span class="alti-dial" aria-hidden="true"><i id="altiNeedle"></i></span>
+    <span class="alti-read"><b id="altiNum">400 km</b><small id="altiZone">Orbit</small></span>
+  </button>
+  <div class="bar-cta">
+    <a class="btn ghost small" href="https://v2.tatertalk.app/login">Sign in</a>
+    <a class="btn small" href="https://v2.tatertalk.app">Talk now</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ 1 · ORBIT ============ -->
+<section class="orbit" data-alt="400" data-zone="Orbit">
+  <div class="stars" aria-hidden="true"></div>
+  <picture class="orbit-img">
+    <source media="(max-width: 699px)" srcset="assets/hero-phone.webp">
+    <img src="assets/hero.webp" alt="Spudnik, a toy potato microphone with red solar panel wings, floats in orbit above the blue Earth." width="1920" height="1280" fetchpriority="high">
+  </picture>
+  <div class="orbit-copy">
+    <p class="kicker">Mission control to your computer</p>
+    <h1>The easiest way to <em>talk</em> to your computer.</h1>
+    <p class="lede">Free speech-to-text dictation in your browser, on desktop and mobile. No downloads, no setup. Just talk.</p>
+    <div class="row">
+      <a class="btn big" href="https://v2.tatertalk.app">Talk now <span aria-hidden="true">→</span></a>
+      <a class="btn ghost big" href="https://www.youtube.com/watch?v=zOpNAK2r0F0">Watch the 1-minute tutorial</a>
+    </div>
+    <p class="fine">Best in Chrome. Works in Safari. Free as in beer.</p>
+  </div>
+</section>
+
+<!-- ============ 2 · TRANSMISSION (demo) ============ -->
+<section class="transmit" id="demo" data-alt="120" data-zone="Upper air">
+  <div class="sec-head">
+    <p class="kicker">Transmission 01</p>
+    <h2>You talk. Spudnik listens.<br>Words come down.</h2>
+    <p class="sub">Press play to hear a sample transmission land in the real Tater Talk app. Or use your own microphone.</p>
+  </div>
+
+  <div class="beam-stage">
+    <div class="beam-bot" id="beamBot"><span class="rings" aria-hidden="true"><i></i><i></i><i></i></span><img src="assets/beam.webp" alt="Spudnik with its red antenna glowing, sending a signal down." width="520" height="418"></div>
+    <div class="beam-ray" aria-hidden="true"></div>
+    <div class="fall-layer" id="fallLayer" aria-hidden="true"></div>
+
+    <figure class="laptop">
+      <div class="lid">
+        <div class="screen" id="screen">
+          <img src="assets/app-desktop.webp" alt="The real Tater Talk app: a large text box with a Start Dictation button below it." width="1440" height="900">
+          <div class="screen-text" id="screenText" aria-live="polite"><span class="ph">Click 🎙️ Start Dictation button below…</span></div>
+          <span class="mode-tag" id="modeTag">Waiting for signal</span>
+        </div>
+      </div>
+      <div class="base" aria-hidden="true"></div>
+      <figcaption class="cap">The real app at <a href="https://v2.tatertalk.app">v2.tatertalk.app</a>. Optional AI proofreading too.</figcaption>
+    </figure>
+
+    <figure class="phone">
+      <div class="phone-body"><img src="assets/app-phone.webp" alt="Tater Talk on a phone." width="390" height="844"></div>
+    </figure>
+  </div>
+
+  <div class="console">
+    <button class="btn big" id="playBtn" type="button"><span class="ico" aria-hidden="true">▶</span> <span id="playLabel">Play sample transmission</span></button>
+    <button class="btn mic big" id="micBtn" type="button"><span class="ico" aria-hidden="true">●</span> <span id="micLabel">Use my mic</span></button>
+    <p class="console-note" id="micNote">The sample is a script we wrote. "Use my mic" asks your browser for the microphone and types what you really say. Nothing is saved.</p>
+  </div>
+</section>
+
+<!-- ============ 3 · CLOUD DECK + MISSION PATCHES ============ -->
+<div class="cloud-deck" aria-hidden="true">
+  <img src="assets/clouds.webp" alt="">
+</div>
+
+<section class="patches" id="patches" data-alt="12" data-zone="Cloud deck">
+  <div class="sec-head">
+    <p class="kicker">Mission patches</p>
+    <h2>Four promises, sewn on.</h2>
+  </div>
+  <ul class="patch-grid">
+    <li><img src="assets/patch-free.webp" alt="Blue embroidered patch: Free as in beer" width="420" height="420">
+      <h3>Free as in beer</h3><p>Pure speech-to-text, at no cost. Bring your own API keys for premium speech models if you want them.</p></li>
+    <li><img src="assets/patch-nodownload.webp" alt="Red embroidered patch: No download" width="420" height="420">
+      <h3>No download</h3><p>It's a web page. Open Chrome or Safari and start talking. That's the whole setup.</p></li>
+    <li><img src="assets/patch-devices.webp" alt="Sky blue embroidered patch: Every device" width="420" height="420">
+      <h3>Every device</h3><p>Desktop, tablet and phone. Windows, Mac, Linux, iPhone, iPad and Android.</p></li>
+    <li><img src="assets/patch-private.webp" alt="Orange embroidered patch: Private" width="420" height="420">
+      <h3>Privacy focused</h3><p>Your browser's own speech service does the listening, like texting by voice on your phone. <a href="https://phils.app/blog/privacy/">Privacy policy</a>.</p></li>
+    <li class="unsewn"><div class="stitch" aria-hidden="true"><span>Voice<br>commands</span></div>
+      <h3>Still being stitched</h3><p>Voice commands to navigate and edit hands-free. Coming soon, not here yet.</p></li>
+  </ul>
+</section>
+
+<!-- ============ 4 · GROUND STATIONS (platforms) ============ -->
+<section class="stations" id="stations" data-alt="3" data-zone="Low sky">
+  <div class="sec-head">
+    <p class="kicker">Ground stations</p>
+    <h2>Anywhere with a browser and a microphone can pick up the signal.</h2>
+  </div>
+  <div class="horizon">
+    <div class="earth" aria-hidden="true"></div>
+    <ul class="dishes">
+      <li style="--x:7%;--drop:7.3vw"><img src="assets/station.webp" alt="" width="199" height="300"><b>Windows</b><small>Desktop</small></li>
+      <li style="--x:21%;--drop:3.3vw"><img src="assets/station.webp" alt="" width="199" height="300"><b>macOS</b><small>Desktop</small></li>
+      <li style="--x:35%;--drop:0.9vw"><img src="assets/station.webp" alt="" width="199" height="300"><b>Linux</b><small>Desktop</small></li>
+      <li style="--x:50%;--drop:0vw"><img src="assets/station.webp" alt="" width="199" height="300"><b>iPhone</b><small>Mobile</small></li>
+      <li style="--x:65%;--drop:0.9vw"><img src="assets/station.webp" alt="" width="199" height="300"><b>Android</b><small>Mobile</small></li>
+      <li style="--x:79%;--drop:3.3vw"><img src="assets/station.webp" alt="" width="199" height="300"><b>iPad</b><small>Tablet</small></li>
+      <li style="--x:93%;--drop:7.3vw"><img src="assets/station.webp" alt="" width="199" height="300"><b>Android tablets</b><small>Tablet</small></li>
+    </ul>
+  </div>
+  <p class="placard"><span class="lamp green"></span> Best reception in <b>Chrome</b> <span class="sep">·</span> <span class="lamp amber"></span> Works in <b>Safari</b> <span class="sep">·</span> No extensions needed</p>
+</section>
+
+<!-- ============ 5 · USE CASES as teleprinter tape ============ -->
+<section class="tape-sec" id="uses" data-alt="1" data-zone="Final approach">
+  <div class="sec-head">
+    <p class="kicker">Incoming traffic</p>
+    <h2>Who's talking to their computer today?</h2>
+  </div>
+  <div class="tapes">
+    <article class="tape t1"><span class="tape-id">MSG 01 · ACCESSIBILITY</span><p>For people with mobility challenges or repetitive strain injuries. Your voice does the typing.</p></article>
+    <article class="tape t2"><span class="tape-id">MSG 02 · PROMPT YOUR AI</span><p>Talk your long prompt out loud, then paste it into your chatbot. Faster than typing it.</p></article>
+    <article class="tape t3"><span class="tape-id">MSG 03 · WRITING</span><p>Blog posts, articles and documentation, by speaking naturally.</p></article>
+    <article class="tape t4"><span class="tape-id">MSG 04 · WORK</span><p>Emails, reports and presentations, while your hands do something else.</p></article>
+    <article class="tape t5"><span class="tape-id">MSG 05 · CODE</span><p>Code comments, documentation and commit messages.</p></article>
+  </div>
+</section>
+
+<!-- ============ 6 · FAQ as the mission logbook ============ -->
+<section class="log-sec" id="log" data-alt="0.3" data-zone="Dawn">
+  <div class="logbook">
+    <div class="log-head">
+      <p class="kicker dark">Mission logbook</p>
+      <h2>Questions from the ground</h2>
+    </div>
+    <details open>
+      <summary><span class="lognum">LOG 01</span> What browsers does Tater 🥔 Talk support?</summary>
+      <p>Tater Talk works best in Google Chrome and also supports Safari. It runs right in your browser. No downloads, no extensions.</p>
+    </details>
+    <details>
+      <summary><span class="lognum">LOG 02</span> Is Tater 🥔 Talk free?</summary>
+      <p>Yes. Tater Talk is free as in beer 🍺. You can bring your own API keys to use premium speech models if you like.</p>
+    </details>
+    <details>
+      <summary><span class="lognum">LOG 03</span> Which devices and platforms are supported?</summary>
+      <p>Windows, macOS, Linux, iPhone, iPad and Android. If your device has a modern browser and a microphone, you're good to go.</p>
+    </details>
+    <details>
+      <summary><span class="lognum">LOG 04</span> How accurate is it? Do you store my audio?</summary>
+      <p>Accuracy depends on your microphone and how you speak. Speak clearly, like a newscaster reading the news. Your browser sends your speech to Google, Apple, Microsoft or AssemblyAI to turn it into text, the same as dictating a text message on your phone. See the <a href="https://phils.app/blog/privacy/">Privacy Policy</a> for how data is handled.</p>
+    </details>
+    <details>
+      <summary><span class="lognum">LOG 05</span> Can I use my own API keys?</summary>
+      <p>Yes. Bring your own keys to unlock premium speech recognition models, and keep full control of your usage and costs.</p>
+    </details>
+    <p class="log-sign">Signed, mission control · <a href="mailto:tatertalk@googlegroups.com">tatertalk@googlegroups.com</a></p>
+  </div>
+</section>
+
+<!-- ============ 7 · TOUCHDOWN ============ -->
+<section class="touchdown" id="land" data-alt="0" data-zone="Touchdown">
+  <div class="td-copy">
+    <p class="kicker dark">Touchdown</p>
+    <h2>Your words have landed.<br>Your turn.</h2>
+  </div>
+  <div class="td-scene">
+    <picture>
+      <source media="(max-width: 699px)" srcset="assets/finale-phone.webp">
+      <img src="assets/finale.webp" alt="Spudnik, big and close, has landed on chrome legs in a potato field at sunrise." width="1920" height="1280">
+    </picture>
+    <div class="launch">
+      <a class="btn big launch-btn" id="launchBtn" href="https://v2.tatertalk.app"><span id="launchLabel">Launch Tater Talk</span></a>
+      <a class="tut" href="https://www.youtube.com/watch?v=zOpNAK2r0F0">or watch the 1-minute tutorial</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER: the soil ============ -->
+<footer class="soil">
+  <div class="soil-inner">
+    <div class="maker">
+      <img src="assets/logo.webp" alt="" width="56" height="56">
+      <p>Tater Talk is made by <b>1 human</b>, <a href="https://philipbrocoum.com">Philip</a>, and one potato that thinks it is a satellite. Free, for better accessibility.</p>
+    </div>
+    <nav class="cols" aria-label="Footer">
+      <div><h4>Product</h4>
+        <a href="https://v2.tatertalk.app">Talk now</a>
+        <a href="https://v2.tatertalk.app/login">Sign in</a>
+        <a href="#demo">Demo</a>
+        <a href="#patches">Features</a>
+        <a href="#log">FAQ</a></div>
+      <div><h4>Support</h4>
+        <a href="https://www.youtube.com/watch?v=zOpNAK2r0F0">1-minute tutorial</a>
+        <a href="mailto:tatertalk@googlegroups.com">Contact Phil</a>
+        <a href="https://phils.app/blog/privacy/">Privacy policy</a>
+        <a href="https://phils.app">Terms of service</a></div>
+      <div><h4>Philip</h4>
+        <a href="https://philipbrocoum.com">philipbrocoum.com</a>
+        <a href="https://phils.app">Blog</a>
+        <a href="https://www.youtube.com/@PhilipBrocoum">YouTube</a>
+        <a href="https://github.com/stedwick">GitHub</a></div>
+    </nav>
+  </div>
+  <p class="legal">© 2026 Philip Brocoum · Altitude 0 m · All words landed safely.</p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

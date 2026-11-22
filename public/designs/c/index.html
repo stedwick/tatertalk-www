@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tater Talk · Hotel Tater</title>
+<meta name="description" content="Tater Talk is free dictation in your browser. Ring the bell, then just talk. Desktop and mobile, no downloads, no setup.">
+<link rel="icon" href="assets/logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800;9..144,900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Caveat:wght@500;700&family=Cormorant+SC:wght@600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="preload" as="image" href="assets/hero.webp">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0"/></filter>
+</svg>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ===== Header: the brass desk sign ===== -->
+<header class="top" id="top">
+  <a class="brand" href="#top" aria-label="Tater Talk home">
+    <img src="assets/logo.webp" alt="" width="40" height="40">
+    <span class="brand-name"><b>Tater Talk</b><small>Hotel Tater · front desk</small></span>
+  </a>
+  <nav class="menu" aria-label="Main">
+    <a href="#register">Register</a>
+    <a href="#keys">Room keys</a>
+    <a href="#rules">House rules</a>
+    <a href="#checkout">Checkout</a>
+  </nav>
+  <div class="clock" aria-label="Hotel clock"><span class="clock-face" aria-hidden="true"><i class="h"></i><i class="m"></i></span><span class="clock-time">12:00 AM</span></div>
+  <a class="signin" href="https://v2.tatertalk.app/login">Sign in</a>
+  <a class="btn brass small" href="https://v2.tatertalk.app">Talk now</a>
+  <button class="chain" type="button" aria-pressed="false" aria-label="Pull the lamp chain: switch to day shift (light mode)">
+    <span class="beads" aria-hidden="true"></span><span class="pull" aria-hidden="true"></span>
+    <span class="chain-tag">Night shift</span>
+  </button>
+</header>
+
+<main>
+<!-- ===== 1. Hero: the desk at midnight ===== -->
+<section class="hero" aria-labelledby="h1">
+  <div class="stage">
+    <img class="scene" src="assets/hero.webp" srcset="assets/hero-900.webp 900w, assets/hero.webp 1536w" sizes="(max-width: 700px) 900px, 100vw" alt="Midnight at a hotel front desk: a brass lamp, a small vinyl potato microphone with two black eyes, and a brass service bell on a cherry-wood counter." width="1536" height="1024">
+    <div class="lamp-glow" aria-hidden="true"></div>
+    <div class="relight" aria-hidden="true"></div>
+    <button class="bell-spot" data-ring type="button" aria-label="Ring the bell: play a sample in the guest register"><span class="ding">ding!</span></button>
+  </div>
+  <div class="hero-copy">
+    <p class="kicker">Hotel Tater · open all night</p>
+    <h1 id="h1">Ring for service.<br><em>Then just talk.</em></h1>
+    <p class="lede">Tater Talk is free dictation in your browser. You talk, the words appear. Desktop and mobile. No downloads, no setup.</p>
+    <div class="cta-row">
+      <a class="btn brass" href="https://v2.tatertalk.app">Talk now <span aria-hidden="true">→</span></a>
+      <a class="btn ghost" href="https://www.youtube.com/watch?v=zOpNAK2r0F0">Watch the tutorial</a>
+    </div>
+    <p class="hint">Or ring the bell on the desk.</p>
+  </div>
+  <div class="sill" aria-hidden="true"></div>
+</section>
+
+<!-- ===== 2. The guest register: the demo ===== -->
+<section class="register" id="register" aria-labelledby="reg-h">
+  <div class="ring-scene">
+    <img src="assets/ring.webp" alt="Close-up: the potato microphone leans toward the brass bell." width="1536" height="1024">
+    <button class="bell-spot ring-bell" data-ring type="button" aria-label="Ring the bell: play the sample"><span class="ding">ding!</span></button>
+    <div class="ring-copy">
+      <p class="kicker">The guest register</p>
+      <h2 id="reg-h">Say it.<br>The register<br>writes it down.</h2>
+      <p>Play the sample to see how words appear. Or use your own microphone and sign the book yourself.</p>
+    </div>
+  </div>
+  <div class="book-wrap">
+    <div class="book">
+      <img src="assets/register.webp" alt="" class="book-img" width="1536" height="1024">
+      <div class="page left">
+        <p class="page-title">Recent guests</p>
+        <ol class="guests">
+          <li><span class="g">A writer</span><span class="r">blog posts &amp; articles</span></li>
+          <li><span class="g">A developer</span><span class="r">code comments, commit messages</span></li>
+          <li><span class="g">A manager</span><span class="r">emails &amp; reports</span></li>
+          <li><span class="g">Sore wrists</span><span class="r">no typing today, thanks</span></li>
+          <li><span class="g">Busy hands</span><span class="r">cooking while dictating</span></li>
+          <li><span class="g">Someone asking AI</span><span class="r">long prompts, said out loud</span></li>
+        </ol>
+      </div>
+      <div class="page right">
+        <p class="page-title"><span class="mode" id="mode">Tonight's entry</span><span class="rec" id="rec" hidden>● listening</span></p>
+        <div class="ink" id="ink" aria-live="polite"><span class="placeholder">Your words will appear here…</span></div>
+      </div>
+    </div>
+    <div class="desk-controls">
+      <button class="bell-btn" id="sampleBtn" type="button">
+        <span class="bell-ico" aria-hidden="true"></span>
+        <span><b>Play sample</b><small>A scripted demo. No microphone.</small></span>
+      </button>
+      <button class="bell-btn mic" id="micBtn" type="button">
+        <span class="bell-ico" aria-hidden="true"></span>
+        <span><b>Use my mic</b><small>Your voice, in this page. Best in Chrome.</small></span>
+      </button>
+      <button class="text-btn" id="clearBtn" type="button">Tear out page</button>
+    </div>
+    <p class="mic-note" id="micNote" role="status"></p>
+  </div>
+</section>
+
+<!-- ===== 3. The desk computer: real app ===== -->
+<section class="real" aria-labelledby="real-h">
+  <div class="real-copy">
+    <p class="kicker">Behind the desk</p>
+    <h2 id="real-h">The real app,<br>right on the desk.</h2>
+    <p>This is the app. Press <b>Start Dictation</b>, talk, then <b>Cut Text</b> and paste it anywhere: email, docs, code or your AI chat. Turn on <b>AI Proofreading</b> if you like.</p>
+    <a class="btn brass" href="https://v2.tatertalk.app">Open Tater Talk</a>
+  </div>
+  <div class="devices">
+    <img class="dev-scene" src="assets/device.webp" srcset="assets/device-900.webp 900w, assets/device.webp 1536w" sizes="100vw" alt="" width="1536" height="1024" loading="lazy">
+    <img class="scr laptop-scr" src="assets/app-1440.webp" alt="The real Tater Talk app on a laptop: a big text box, AI Proofreading, Start Dictation and Cut Text buttons." width="1440" height="900" loading="lazy">
+    <img class="scr phone-scr" src="assets/app-390.webp" alt="The real Tater Talk app on a phone." width="390" height="844" loading="lazy">
+  </div>
+</section>
+
+<!-- ===== 4. Room keys: features ===== -->
+<section class="keys" id="keys" aria-labelledby="keys-h">
+  <div class="section-head">
+    <p class="kicker">The key cabinet</p>
+    <h2 id="keys-h">Five rooms. Every key is free.</h2>
+  </div>
+  <div class="cabinet">
+    <article class="hook">
+      <div class="key"><img src="assets/key.webp" alt="" width="700" height="220"><span class="fob-no">1</span></div>
+      <div class="tag"><h3>Free as in beer</h3><p>Talk as much as you like. Bring your own API keys for premium speech models, if you want them.</p></div>
+    </article>
+    <article class="hook">
+      <div class="key"><img src="assets/key.webp" alt="" width="700" height="220"><span class="fob-no">2</span></div>
+      <div class="tag"><h3>No download</h3><p>Nothing to install. Open Chrome or Safari and start talking.</p></div>
+    </article>
+    <article class="hook">
+      <div class="key"><img src="assets/key.webp" alt="" width="700" height="220"><span class="fob-no">3</span></div>
+      <div class="tag"><h3>Every device</h3><p>Desktop, tablet and phone. Windows, Mac, Linux, iPhone, iPad and Android.</p></div>
+    </article>
+    <article class="hook">
+      <div class="key"><img src="assets/key.webp" alt="" width="700" height="220"><span class="fob-no">4</span></div>
+      <div class="tag"><h3>Private room</h3><p>Your speech goes to the speech service that turns it into text, like dictating on your phone. See the Do Not Disturb sign below.</p></div>
+    </article>
+    <article class="hook">
+      <div class="key"><img src="assets/key.webp" alt="" width="700" height="220"><span class="fob-no">5</span></div>
+      <div class="tag"><h3>Proofreading</h3><p>Tick AI Proofreading in the app to clean up your text after you talk. It is optional.</p></div>
+    </article>
+    <article class="hook closed">
+      <div class="key empty" aria-hidden="true"><span class="fob-no">6</span></div>
+      <div class="tag"><h3>Voice commands</h3><p><b>Under renovation.</b> Coming soon: control your computer by voice.</p></div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== 5. Postcards: platforms ===== -->
+<section class="postcards" aria-labelledby="pc-h">
+  <div class="section-head">
+    <p class="kicker">Letters from our guests' devices</p>
+    <h2 id="pc-h">Wish you were here.<br><em>(You are.)</em></h2>
+    <p>Any device with a modern browser and a microphone. <b>Best in Chrome, works in Safari.</b></p>
+  </div>
+  <ul class="cards">
+    <li class="card c1"><span class="stamp">W</span><b>Greetings from Windows</b><small>Chrome · desktop</small></li>
+    <li class="card c2"><span class="stamp">M</span><b>Greetings from macOS</b><small>Chrome or Safari</small></li>
+    <li class="card c3"><span class="stamp">L</span><b>Greetings from Linux</b><small>Chrome · desktop</small></li>
+    <li class="card c4"><span class="stamp">i</span><b>Greetings from iPhone</b><small>Safari or Chrome</small></li>
+    <li class="card c5"><span class="stamp">iP</span><b>Greetings from iPad</b><small>Safari or Chrome</small></li>
+    <li class="card c6"><span class="stamp">A</span><b>Greetings from Android</b><small>Chrome · phone</small></li>
+    <li class="card c7"><span class="stamp">At</span><b>Greetings from Android tablets</b><small>Chrome · tablet</small></li>
+  </ul>
+</section>
+
+<!-- ===== 6. Do not disturb: privacy + house rules: FAQ ===== -->
+<section class="door" id="rules" aria-labelledby="rules-h">
+  <div class="hanger" role="note" aria-label="Privacy">
+    <span class="hole" aria-hidden="true"></span>
+    <p class="dnd">Do not<br>disturb</p>
+    <p class="dnd-sub">Your words are yours.</p>
+    <p>Your browser sends your speech to Google, Apple, Microsoft or AssemblyAI to turn it into text, like dictating a text message on your phone.</p>
+    <a href="https://phils.app/blog/privacy/">Read the privacy policy</a>
+  </div>
+
+  <div class="rules-card">
+    <p class="kicker dark">Posted on the back of every door</p>
+    <h2 id="rules-h">House rules</h2>
+    <details open>
+      <summary><span class="n">I.</span> What browsers does Tater Talk support?</summary>
+      <p>It works best in Google Chrome and also supports Safari. It runs right in your browser, with no downloads or extensions.</p>
+    </details>
+    <details>
+      <summary><span class="n">II.</span> Is Tater Talk free?</summary>
+      <p>Yes. Tater Talk is free as in beer. You can bring your own API keys to use premium speech models.</p>
+    </details>
+    <details>
+      <summary><span class="n">III.</span> Which devices and platforms are supported?</summary>
+      <p>Windows, macOS, Linux, iPhone, iPad, Android phones and Android tablets. If your device has a modern browser and a microphone, you're good to go.</p>
+    </details>
+    <details>
+      <summary><span class="n">IV.</span> How accurate is it? Do you store my audio?</summary>
+      <p>Accuracy depends on your microphone and how you speak. Speak clearly, like a newscaster reading the news. Your browser sends your speech to Google, Apple, Microsoft or AssemblyAI for speech-to-text, like dictating a text on your phone. See the <a href="https://phils.app/blog/privacy/">privacy policy</a> for how data is handled.</p>
+    </details>
+    <details>
+      <summary><span class="n">V.</span> Can I use my own API keys?</summary>
+      <p>Yes. Bring your own keys to use premium speech recognition models, with full control of your usage and costs.</p>
+    </details>
+    <p class="signed">— The management (one potato, one Philip)</p>
+  </div>
+</section>
+
+<!-- ===== 7. Checkout receipt ===== -->
+<section class="checkout" id="checkout" aria-labelledby="co-h">
+  <div class="receipt">
+    <p class="r-head">HOTEL TATER</p>
+    <p class="r-sub">Front desk · open all night<br>tatertalk.app</p>
+    <p class="r-rule">- - - - - - - - - - - - - - - - - -</p>
+    <h2 id="co-h" class="r-title">Guest folio</h2>
+    <table>
+      <tr><td>Dictation, all night</td><td>$0.00</td></tr>
+      <tr><td>Downloads</td><td>none</td></tr>
+      <tr><td>Setup</td><td>none</td></tr>
+      <tr><td>Proofreading (optional)</td><td>$0.00</td></tr>
+      <tr><td>Your own API keys (optional)</td><td>your cost</td></tr>
+      <tr class="total"><td>TOTAL</td><td>$0.00</td></tr>
+    </table>
+    <p class="r-rule">- - - - - - - - - - - - - - - - - -</p>
+    <p class="r-paid">PAID IN FULL · FREE AS IN BEER</p>
+    <a class="btn brass wide" href="https://v2.tatertalk.app">Check in · Talk now</a>
+    <a class="r-link" href="https://v2.tatertalk.app/login">Returning guest? Sign in</a>
+    <p class="r-thanks">Thank you for staying with us.<br>Please ring again.</p>
+    <span class="tear" aria-hidden="true"></span>
+  </div>
+</section>
+
+<!-- ===== 8. Morning: the same desk at dawn ===== -->
+<section class="dawn" aria-labelledby="dawn-h">
+  <div class="dawn-stage">
+    <img class="peek" src="assets/peek.webp" alt="The potato microphone, close up, in the first light of morning." width="1536" height="1024">
+    <div class="window-light" aria-hidden="true"></div>
+  </div>
+  <div class="dawn-copy">
+    <p class="kicker">7:00 AM · end of the night shift</p>
+    <h2 id="dawn-h">Good morning.<br>Your words are ready.</h2>
+    <a class="btn brass" href="https://v2.tatertalk.app">Talk now <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+</main>
+
+<!-- ===== Footer: the brass plaque ===== -->
+<footer class="plaque-wrap">
+  <div class="plaque">
+    <span class="screw tl"></span><span class="screw tr"></span><span class="screw bl"></span><span class="screw br"></span>
+    <p class="p-name">Hotel Tater</p>
+    <p class="p-line">Night manager: <a href="https://philipbrocoum.com">Philip</a> · est. 2024</p>
+    <p class="p-note">Tater Talk is made by one person, Philip Brocoum, and one potato. It is free, and it will stay simple.</p>
+    <nav class="p-links" aria-label="Footer">
+      <div><b>The hotel</b><a href="https://v2.tatertalk.app">Talk now</a><a href="https://v2.tatertalk.app/login">Sign in</a><a href="#register">Demo</a><a href="https://www.youtube.com/watch?v=zOpNAK2r0F0">Tutorial video</a></div>
+      <div><b>The desk</b><a href="#keys">Features</a><a href="#rules">FAQ</a><a href="https://phils.app/blog/privacy/">Privacy</a><a href="mailto:tatertalk@googlegroups.com">Contact</a></div>
+      <div><b>The manager</b><a href="https://philipbrocoum.com">philipbrocoum.com</a><a href="https://phils.app">phils.app</a><a href="https://github.com/stedwick">GitHub</a><a href="https://www.youtube.com/@PhilipBrocoum">YouTube</a></div>
+    </nav>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

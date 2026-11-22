@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tater Talk · Series 1</title>
+<meta name="description" content="Tater Talk is free speech-to-text dictation in your browser. No downloads, no setup, just talk.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero-potato.webp">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ SHOP SIGN (menu) ============ -->
+<header class="sign">
+  <a class="sign__logo" href="#top" aria-label="Tater Talk home">
+    <img src="assets/logo.webp" alt="" width="40" height="40">
+    <span>Tater Talk <small>Toy &amp; Dictation Co.</small></span>
+  </a>
+  <nav class="sign__nav" aria-label="Main">
+    <a href="#demo">Try me</a>
+    <a href="#series">The series</a>
+    <a href="#leaflet">FAQ</a>
+    <a href="https://v2.tatertalk.app">Sign in</a>
+  </nav>
+  <a class="btn btn--tag" href="https://v2.tatertalk.app">Talk now <span class="price">$0</span></a>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO: the shop window ============ -->
+<section class="shop" aria-label="Tater Talk, Series 1">
+  <div class="shop__lights" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="shop__stage">
+
+    <!-- small boxes left/right: scale jump -->
+    <a class="mini mini--l" href="#no2" aria-label="No. 2, Free as in Beer">
+      <div class="mini__hook"></div>
+      <div class="mini__window" style="--c:#47E0A7"><img src="assets/fig-free.webp" alt="" loading="lazy"></div>
+      <b>No. 2</b>
+    </a>
+    <a class="mini mini--r" href="#no6" aria-label="No. 6, The Proofreader">
+      <div class="mini__hook"></div>
+      <div class="mini__window" style="--c:#FFE14D"><img src="assets/fig-proof.webp" alt="" loading="lazy"></div>
+      <b>No. 6</b>
+    </a>
+
+    <!-- the giant window box -->
+    <article class="bigbox" id="no1" data-fig="1">
+      <div class="bigbox__hook" aria-hidden="true"></div>
+      <div class="bigbox__front">
+        <div class="bigbox__band">
+          <span>Series 1</span><span>No. 1 of 7</span>
+        </div>
+        <h1 class="bigbox__title">Tater<br>Talk</h1>
+        <p class="bigbox__sub">The talking potato</p>
+        <div class="window">
+          <img src="assets/hero-potato.webp" alt="Tater Talk mascot: a soft vinyl potato figure holding a silver microphone" width="1024" height="1024" fetchpriority="high">
+          <div class="bubble bubble--hero">Just talk.<br>I'll type.</div>
+        </div>
+        <p class="bigbox__claim">Free speech-to-text dictation in your browser. Talk, and your words appear.</p>
+        <ul class="bigbox__badges">
+          <li>No downloads</li><li>No setup</li><li>Just talk</li>
+        </ul>
+      </div>
+      <div class="bigbox__side" aria-hidden="true">
+        <span>Desktop · Tablet · Phone</span>
+        <span>★ Batteries not included. Not needed.</span>
+      </div>
+      <div class="pricetag" aria-label="Price: zero dollars">
+        <small>Price</small><b>$0</b><small>free as in beer</small>
+      </div>
+    </article>
+  </div>
+
+  <div class="shop__cta">
+    <a class="btn btn--big" href="https://v2.tatertalk.app">Talk now, it's free</a>
+    <a class="btn btn--ghost" href="#demo">Press my back first ↓</a>
+  </div>
+  <div class="shelf" aria-hidden="true"></div>
+</section>
+
+<!-- ============ DEMO: the back of the box ============ -->
+<section class="tryme" id="demo" aria-labelledby="tryme-h">
+  <div class="wrap">
+    <div class="boxback">
+      <div class="boxback__head">
+        <span class="sticker sticker--pink">Try me!</span>
+        <h2 id="tryme-h">Press my back.<br>I talk, it types.</h2>
+        <p>Two buttons. One plays a pretend sample. The other uses your real microphone.</p>
+      </div>
+
+      <div class="boxback__grid">
+        <div class="pushfig">
+          <div class="pushfig__ring">
+            <img src="assets/hero-potato.webp" alt="" loading="lazy">
+          </div>
+          <div class="pushbtns">
+            <button class="push push--sample" id="btnSample" type="button">
+              <span class="push__cap">▶</span>
+              <span class="push__lbl"><b>Play sample</b><small>Scripted. No mic.</small></span>
+            </button>
+            <button class="push push--mic" id="btnMic" type="button">
+              <span class="push__cap">●</span>
+              <span class="push__lbl"><b>Use my mic</b><small>Real. Your browser asks first.</small></span>
+            </button>
+          </div>
+          <p class="status" id="status" role="status" aria-live="polite">Waiting for a push.</p>
+        </div>
+
+        <div class="device">
+          <div class="device__screen">
+            <img src="assets/app-1440.webp" alt="The real Tater Talk app: a big text box with a Start Dictation button" loading="lazy" class="device__shot">
+            <div class="device__text" id="out"><span class="ph">Click 🎙 Start Dictation button below...</span></div>
+            <span class="device__mode" id="mode">SAMPLE</span>
+          </div>
+          <div class="device__base" aria-hidden="true"></div>
+          <div class="tape" aria-hidden="true"><div class="tape__inner" id="tape">· · · words print here · · ·</div></div>
+        </div>
+      </div>
+
+      <div class="boxback__foot">
+        <ol class="steps">
+          <li><b>1</b> Click the microphone button</li>
+          <li><b>2</b> Speak naturally</li>
+          <li><b>3</b> Watch your words appear</li>
+        </ol>
+        <a class="tv" href="https://www.youtube.com/watch?v=zOpNAK2r0F0">
+          <span class="tv__set"><img src="assets/tutorial.webp" alt="" loading="lazy"><i>▶</i></span>
+          <span><b>As seen on YouTube</b><small>Watch the 1-minute demo</small></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERIES: shelf one (big boxes) ============ -->
+<section class="series series--pink" id="series" aria-labelledby="series-h">
+  <div class="wrap">
+    <header class="aisle">
+      <span class="aisle__sign">Aisle 1</span>
+      <h2 id="series-h">Collect the whole potato.</h2>
+      <p>Each figure is one thing Tater Talk does. All seven are free. That is not a sale. It is just the price.</p>
+    </header>
+
+    <div class="row row--two">
+      <article class="box" id="no2" data-fig="2" style="--c:#47E0A7;--ink:#0b5a3e">
+        <div class="box__hook"></div>
+        <div class="box__band"><span>Series 1</span><span>No. 2</span></div>
+        <div class="window"><img src="assets/fig-free.webp" alt="Potato figure with a beer-foam hat holding a beer mug" loading="lazy">
+          <div class="bubble">Free. Like,<br>actually free.</div></div>
+        <h3>Free as in Beer</h3>
+        <div class="box__back">
+          <p>Pure speech-to-text, no bill. Want fancier ears? Bring your own API keys for premium speech models.</p>
+          <span class="box__age">Ages: everyone with a voice</span>
+        </div>
+      </article>
+
+      <article class="box" id="no3" data-fig="3" style="--c:#9BE22D;--ink:#2f5200">
+        <div class="box__hook"></div>
+        <div class="box__band"><span>Series 1</span><span>No. 3</span></div>
+        <div class="window"><img src="assets/fig-skates.webp" alt="Potato figure on roller skates" loading="lazy">
+          <div class="bubble">Nothing to<br>install. Roll.</div></div>
+        <h3>No Downloads</h3>
+        <div class="box__back">
+          <p>Pure web. Open Chrome or Safari and start talking. No installer, no extension, no setup.</p>
+          <span class="box__age">Assembly required: none</span>
+        </div>
+      </article>
+    </div>
+
+    <!-- long box lying on its side: works-with panel -->
+    <article class="longbox" aria-labelledby="works-h">
+      <div class="longbox__end"><span>Works <br>with</span></div>
+      <div class="longbox__body">
+        <h3 id="works-h">Works with every device you already own</h3>
+        <ul class="plats">
+          <li><i>⊞</i>Windows</li><li><i></i>macOS</li><li><i>🐧</i>Linux</li>
+          <li><i>▯</i>iPhone</li><li><i>▭</i>iPad</li><li><i>◉</i>Android</li><li><i>▭</i>Android tablets</li>
+        </ul>
+        <p class="longbox__note"><b>Best in Chrome.</b> Works in Safari. Needs a modern browser and a microphone.</p>
+      </div>
+      <div class="longbox__barcode" aria-hidden="true"></div>
+    </article>
+  </div>
+  <div class="shelf shelf--pink" aria-hidden="true"></div>
+</section>
+
+<!-- ============ SERIES: shelf two (row of small boxes) ============ -->
+<section class="series series--mint" aria-label="More figures">
+  <div class="wrap">
+    <header class="aisle">
+      <span class="aisle__sign">Aisle 2</span>
+      <h2>Smaller boxes, same potato.</h2>
+    </header>
+    <div class="row row--four">
+      <article class="box box--sm" id="no4" data-fig="4" style="--c:#FF6FB5;--ink:#7a1146">
+        <div class="box__hook"></div>
+        <div class="box__band"><span>Series 1</span><span>No. 4</span></div>
+        <div class="window"><img src="assets/fig-phone.webp" alt="Potato figure holding a tiny phone" loading="lazy">
+          <div class="bubble">Same potato,<br>any screen.</div></div>
+        <h3>Every Device</h3>
+        <div class="box__back"><p>Desktop, tablet and phone. Windows, Mac, Linux, iPhone and Android.</p></div>
+      </article>
+
+      <article class="box box--sm" id="no5" data-fig="5" style="--c:#2D6BFF;--ink:#0d2a73">
+        <div class="box__hook"></div>
+        <div class="box__band"><span>Series 1</span><span>No. 5</span></div>
+        <div class="window"><img src="assets/fig-private.webp" alt="Potato figure with a sleep mask hugging a pillow" loading="lazy">
+          <div class="bubble">I'll tell you<br>straight.</div></div>
+        <h3>The Honest One</h3>
+        <div class="box__back"><p>Your browser sends speech to Google, Apple, Microsoft or AssemblyAI to turn it into text, like voice texting on your phone. <a href="https://phils.app/blog/privacy/">Read the privacy policy</a>.</p></div>
+      </article>
+
+      <article class="box box--sm" id="no6" data-fig="6" style="--c:#FFE14D;--ink:#6b5300">
+        <div class="box__hook"></div>
+        <div class="box__band"><span>Series 1</span><span>No. 6</span></div>
+        <div class="window"><img src="assets/fig-proof.webp" alt="Potato figure with reading glasses and a red pencil" loading="lazy">
+          <div class="bubble">Tick the box.<br>I tidy up.</div></div>
+        <h3>The Proofreader</h3>
+        <div class="box__back"><p>Optional AI proofreading cleans up what you said. Turn it on in the app's settings.</p></div>
+      </article>
+
+      <article class="box box--sm box--ghost" aria-label="Series 2: voice commands, coming soon">
+        <div class="box__hook"></div>
+        <div class="box__band"><span>Series 2</span><span>Soon</span></div>
+        <div class="window"><img src="assets/hero-potato.webp" alt="" loading="lazy"><span class="ghostq">?</span></div>
+        <h3>Voice Commands</h3>
+        <div class="box__back"><p>Coming soon. Navigate, edit and act hands-free. Not on the shelf yet.</p></div>
+      </article>
+    </div>
+
+    <!-- play ideas: use cases as a sticker sheet -->
+    <div class="stickers" aria-labelledby="ideas-h">
+      <h3 id="ideas-h">Play ideas</h3>
+      <ul>
+        <li style="--r:-3deg;--b:#FFE14D"><b>Accessibility</b>For people with mobility challenges or repetitive strain injuries.</li>
+        <li style="--r:2deg;--b:#FF6FB5"><b>Productivity</b>Dictate documents, emails and code faster than you type.</li>
+        <li style="--r:-1deg;--b:#2D6BFF;--t:#fff"><b>Multitasking</b>Hands free for other things while you talk.</li>
+        <li style="--r:3deg;--b:#FF7A1A"><b>Writing</b>Blog posts, articles and docs, said out loud.</li>
+        <li style="--r:-2deg;--b:#fff"><b>Work mail</b>Emails, reports and presentations.</li>
+        <li style="--r:1deg;--b:#FFE14D"><b>Code</b>Comments, docs and commit messages. Prompt your AI like never before.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ: the folded instruction leaflet ============ -->
+<section class="leafsec" id="leaflet" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="leaflet">
+      <div class="leaflet__head">
+        <span class="leaflet__no">Instructions · Please read · Or don't, it's easy</span>
+        <h2 id="faq-h">Questions people ask the potato</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary><b>1</b> What browsers does Tater Talk support?</summary>
+          <p>Tater Talk works best in Google Chrome and also supports Safari. It runs directly in your browser, with no downloads or extensions.</p>
+        </details>
+        <details>
+          <summary><b>2</b> Is Tater Talk free?</summary>
+          <p>Yes. Tater Talk is free as in beer 🍺 You can bring your own API keys to use premium speech models if you want.</p>
+        </details>
+        <details>
+          <summary><b>3</b> Which devices and platforms are supported?</summary>
+          <p>Windows, macOS, Linux, iPhone, iPad, Android and Android tablets. If your device has a modern browser and a microphone, you are good to go.</p>
+        </details>
+        <details>
+          <summary><b>4</b> How accurate is it? Do you store my audio?</summary>
+          <p>Accuracy depends on your microphone and how you speak. Speak clearly, like a newscaster reads the news. Your browser sends your speech to Google, Apple, Microsoft or AssemblyAI to turn it into text, like dictating a text message on your phone. See the <a href="https://phils.app/blog/privacy/">privacy policy</a> for how data is handled.</p>
+        </details>
+        <details>
+          <summary><b>5</b> Can I use my own API keys?</summary>
+          <p>Yes. Bring your own keys to unlock premium speech models, and keep full control of your usage and costs.</p>
+        </details>
+      </div>
+      <p class="leaflet__more">Still stuck? Write to <a href="mailto:tatertalk@googlegroups.com">tatertalk@googlegroups.com</a>. A human answers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINALE: the secret figure + the giant face ============ -->
+<section class="finale" aria-labelledby="fin-h">
+  <div class="wrap finale__top">
+    <article class="chase" id="no7" data-fig="7">
+      <span class="chase__foil">Secret<br>chase!</span>
+      <div class="window" style="--c:#2a1a05"><img src="assets/fig-secret.webp" alt="A rare golden potato figure"></div>
+      <p><b>No. 7 · The Golden Tater.</b> Rare. Shiny. Also free.</p>
+    </article>
+    <div class="finale__copy">
+      <h2 id="fin-h">That's the whole set.<br>Now say something.</h2>
+      <p>Open the app, press Start Dictation, and talk.</p>
+    </div>
+  </div>
+  <div class="peek">
+    <img src="assets/face-peek.webp" alt="The potato's huge face peeking up from the bottom of the page">
+    <a class="btn btn--big peek__btn" href="https://v2.tatertalk.app">Talk now</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER: the bottom of the box ============ -->
+<footer class="boxbottom">
+  <div class="wrap boxbottom__grid">
+    <div class="boxbottom__maker">
+      <img src="assets/logo.webp" alt="" width="56" height="56">
+      <p><b>Designed by 1 human, Philip.</b> Tater Talk is a one-person dictation app, made in a browser, for browsers. No factory. No investors. One potato.</p>
+      <p class="warn"><b>⚠ Warning:</b> contains small words. Not suitable for people who never talk.</p>
+    </div>
+    <nav class="boxbottom__links" aria-label="Footer">
+      <div><h4>The app</h4>
+        <a href="https://v2.tatertalk.app">Talk now</a>
+        <a href="https://v2.tatertalk.app">Sign in</a>
+        <a href="https://www.youtube.com/watch?v=zOpNAK2r0F0">Tutorial video</a></div>
+      <div><h4>The fine print</h4>
+        <a href="https://phils.app/blog/privacy/">Privacy policy</a>
+        <a href="mailto:tatertalk@googlegroups.com">Contact</a>
+        <a href="/original/">Original site</a></div>
+      <div><h4>The human</h4>
+        <a href="https://philipbrocoum.com">philipbrocoum.com</a>
+        <a href="https://phils.app">phils.app</a></div>
+    </nav>
+    <div class="boxbottom__code">
+      <div class="barcode" id="barcode" aria-hidden="true"></div>
+      <span>TATER-TALK-S1 · $0.00</span>
+      <span class="recycle">♻ Box made of pixels. Please reuse.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ COLLECT ALL 7: checklist + navigation ============ -->
+<aside class="collect" id="collect" aria-label="Collect all 7: jump to a figure">
+  <div class="collect__head"><b>Collect all 7!</b><span id="count">0/7</span></div>
+  <ol class="collect__list">
+    <li><a href="#no1" data-f="1"><img src="assets/thumb-1.webp" alt=""><span>Talker</span></a></li>
+    <li><a href="#no2" data-f="2"><img src="assets/thumb-2.webp" alt=""><span>Free</span></a></li>
+    <li><a href="#no3" data-f="3"><img src="assets/thumb-3.webp" alt=""><span>Skater</span></a></li>
+    <li><a href="#no4" data-f="4"><img src="assets/thumb-4.webp" alt=""><span>Devices</span></a></li>
+    <li><a href="#no5" data-f="5"><img src="assets/thumb-5.webp" alt=""><span>Honest</span></a></li>
+    <li><a href="#no6" data-f="6"><img src="assets/thumb-6.webp" alt=""><span>Proof</span></a></li>
+    <li><a href="#no7" data-f="7"><img src="assets/thumb-7.webp" alt=""><span>???</span></a></li>
+  </ol>
+  <p class="collect__done" id="done">Full set! Your prize: nothing. It was free anyway.</p>
+</aside>
+
+<script src="main.js"></script>
+</body>
+</html>
