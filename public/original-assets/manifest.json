@@ -1,0 +1,22 @@
+{
+  "name": "Tater Talk",
+  "short_name": "TaterTalk",
+  "description": "Free cross-platform speech-to-text dictation web app.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    {
+      "src": "/original-assets/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/original-assets/logo.png",
+      "sizes": "64x64 96x96 128x128 256x256 512x512",
+      "type": "image/png"
+    }
+  ]
+}
